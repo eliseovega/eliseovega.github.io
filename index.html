@@ -103,31 +103,38 @@
             </div>
             <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                <ul class="list-reset">
+
                   <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500">
-                     <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Introducción</span>
+                     <a href='#section1'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500">
+                        <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Introducción</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                  
+                  
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent   ">
+              
+                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">2. Sintaxis</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  ">
+                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">3. Ejemplos</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
+                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">4. Ejercicios</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
-                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
-                     <span class="pb-1 md:pb-0 text-sm">5. Nota Importante</span>
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
+                     <a href='#section5'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                        <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
                      </a>
                   </li>
+                  
                </ul>
             </div>
          </div>
@@ -137,6 +144,7 @@
          <div class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
             <!--Titulo-->
             <div class="font-sans">
+               <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">1. Introducción</h1>
                <span class="text-base text-purple-500 font-bold">&laquo;</span> <a href="#" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Anterior</a>
                <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Que es un Ciclo o Bucle ?</h1>
                <hr class="border-b border-gray-400">
@@ -148,6 +156,9 @@
                condición específica. Al realizar un bucle, el bloque de código que se ejecuta podría tener un valor diferente cada vez
                o permanecer igual. 
             </p>
+            <div class="container">
+               <img src="img/intro.svg" alt="ChitChat Logo">
+            </div>
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Proposito</h2>
                <hr class="border-b border-gray-400">
@@ -188,7 +199,8 @@
             
 
             <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ciclo Mientras ( White )</h2>
+               <h2 id='section2' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">2. Sintaxis</h2>
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ciclo Mientras ( White )</h2>
                <hr class="border-b border-gray-400">
             </div>
             <p class="py-6">
@@ -202,7 +214,7 @@
                El ciclo Mientras primero analiza la condición, y si el resultado es verdaero procederá a ejecutar el bloque de instrucciones.
             </p>
             <div class="font-sans">
-               <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos</h1>
+               <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">3. Ejemplos</h1>
                <hr class="border-b border-gray-400">
             </div>
             <div class="font-sans">
@@ -285,7 +297,7 @@
                <img src="img/resultado3.svg" alt="ChitChat Logo">
             </div>
             <div class="font-sans">
-               <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejercicios</h1>
+               <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">4. Ejercicios</h1>
                <hr class="border-b border-gray-400">
             </div>
             <div class="font-sans">
@@ -304,7 +316,7 @@
 
             
             <!--/ Post Content-->
-            
+
             <!-- util -->
             <hr class="border-b border-gray-400 py-4">
             <div class="flex items-center">
@@ -331,7 +343,7 @@
       <!--main container fin-->
 
       <!--footer inicio-->
-      <footer class="bg-white border-t border-gray-400 shadow">
+      <footer id='section5' class="bg-white border-t border-gray-400 shadow">
          <div class="container mx-auto flex py-8">
             <div class="w-full mx-auto flex flex-wrap">
                <div class="flex w-full lg:w-1/2 ">
@@ -339,6 +351,9 @@
                      <h3 class="font-bold text-gray-900">Nota Importante</h3>
                      <p class="py-4 text-gray-600 text-sm">
                         Los ciclos ó bucles juegan un papel importante en la programación. A medida que ayudan a reducir las tareas repetitivas y autumatizarlas. Si tenemos la lógica correcta, el ciclo ahorra mucho tiempo en la programación.
+                        
+                     </p>
+                     <p class="py-4 text-gray-600 text-sm">
                         Para ello es importante que analices las 3 parte de un ciclo y te ensucies las manos de codigo practicando su lógica.
                      </p>
                   </div>
@@ -413,5 +428,65 @@
          
          
       </script>
+      <!----------------------------------------------------------->
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+      <!-- Scroll Spy -->
+      <script>
+         /* http://jsfiddle.net/LwLBx/ */
+
+         // Cache selectors
+         var lastId,
+            topMenu = $("#menu-content"),
+            topMenuHeight = topMenu.outerHeight() + 25,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+               var item = $($(this).attr("href"));
+               if (item.length) { return item; }
+            });
+
+         // Bind click handler to menu items
+         // so we can get a fancy scroll animation
+         menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+               offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+            $('html, body').stop().animate({
+               scrollTop: offsetTop
+            }, 300);
+            if (!helpMenuDiv.classList.contains("hidden")) {
+               helpMenuDiv.classList.add("hidden");
+            }
+            e.preventDefault();
+         });
+
+         // Bind to scroll
+         $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+               if ($(this).offset().top < fromTop)
+                  return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+               lastId = id;
+               // Set/remove active class
+               menuItems
+                  .parent().removeClass("font-bold border-purple-400")
+                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-purple-400");
+            }
+         });
+
+      </script>
+
    </body>
 </html>
