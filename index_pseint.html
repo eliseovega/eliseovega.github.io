@@ -23,16 +23,15 @@
       <nav id="header" class="fixed w-full z-10 top-0 bg-white border-b border-gray-400">
          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
             <div class="pl-4 flex items-center">
-               <svg class="h-5 pr-3 fill-current text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-               <path d="M0 0h256v256H0V0z" fill="#F7DF1E" />
-               <path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574" />
+               <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M0 2C0 .9.9 0 2 0h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm14 12h4V2H2v12h4c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2zM5 9l2-2 2 2 4-4 2 2-6 6-4-4z"/>
                </svg>
                <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
-               Javascript: Estructura de Control Iterativo
+               PseInt: Estructura de Control Iterativo
                </a>
             </div>
             <div class="block lg:hidden pr-4">
-               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-yellow-500 appearance-none focus:outline-none">
+               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-purple-500 appearance-none focus:outline-none">
                   <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                      <title>Menu</title>
                      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
@@ -42,7 +41,7 @@
             <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
                <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
                   <div class="relative pull-right pl-4 pr-4 md:pr-0">
-                     <input type="search" placeholder="Buscar" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-yellow-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                     <input type="search" placeholder="Buscar" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-purple-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
                      <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
                         <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                            <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
@@ -96,7 +95,7 @@
          <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
             <p class="text-base font-bold py-2 lg:pb-6 text-gray-700">Menu</p>
             <div class="block lg:hidden sticky inset-0">
-               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-yellow-500 appearance-none focus:outline-none">
+               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-purple-500 appearance-none focus:outline-none">
                   <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                   </svg>
@@ -105,33 +104,33 @@
             <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
                <ul class="list-reset">
 
-                  <li class="py-2 md:my-0 hover:bg-yellow-100 lg:hover:bg-transparent">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent">
                      <a href='#section1'
-                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-500 border-l-4 border-transparent lg:border-yellow-500 lg:hover:border-yellow-500">
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:border-purple-500 lg:hover:border-purple-500">
                         <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Introducción</span>
                      </a>
                   </li>
                   
                   
-                  <li class="py-2 md:my-0 hover:bg-yellow-100 lg:hover:bg-transparent   ">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent   ">
               
-                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">2. Sintaxis</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-yellow-100 lg:hover:bg-transparent  ">
-                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  ">
+                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">3. Ejemplos</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-yellow-100 lg:hover:bg-transparent ">
-                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
+                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">4. Ejercicios</span>
                      </a>
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-yellow-100 lg:hover:bg-transparent ">
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
                      <a href='#section5'
-                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                         <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
                      </a>
                   </li>
@@ -146,7 +145,7 @@
             <!--Titulo-->
             <div class="font-sans">
                <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">1. Introducción</h1>
-               <span class="text-base text-yellow-500 font-bold">&laquo;</span> <a href="#" class="text-base md:text-sm text-yellow-500 font-bold no-underline hover:underline">Anterior</a>
+               <span class="text-base text-purple-500 font-bold">&laquo;</span> <a href="#" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Anterior</a>
                <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Que es un Ciclo o Bucle ?</h1>
                <hr class="border-b border-gray-400">
             </div>
@@ -158,7 +157,7 @@
                o permanecer igual. 
             </p>
             <div class="container">
-               <img src="imgjs/intro.svg" alt="ChitChat Logo">
+               <img src="img/intro.svg" alt="ChitChat Logo">
             </div>
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Proposito</h2>
@@ -178,7 +177,7 @@
             <p class="py-6">
                En general, el ciclo o bucle se divide en 3 partes:
             </p>
-            <ol class="border-l-4 border-yellow-500 pl-8 md:pl-12 list-decimal list-inside  py-2 font-sans ">
+            <ol class="border-l-4 border-purple-500 pl-8 md:pl-12 list-decimal list-inside  py-2 font-sans ">
                <li>Inicializacion: Asignación de un valor a la variable</li>
                <li>Condición: Condición para verificar si es verdadero o falso</li>
                <li>Incremento ó Decremento: se utilizan para incrementar automaticamente el ciclo o decrementar.</li>
@@ -192,27 +191,27 @@
 
             </p>
             
-               <ul class="border-l-4 border-yellow-500 pl-8 md:pl-12 list-disc list-inside  py-2 font-sans">
-                  <li>Ciclo While</li>
-                  <li>Ciclo Para For</li>
-                  <li>Ciclo Do While</li>
+               <ul class="border-l-4 border-purple-500 pl-8 md:pl-12 list-disc list-inside  py-2 font-sans">
+                  <li>Ciclo Mientras (White)</li>
+                  <li>Ciclo Para (For)</li>
+                  <li>Ciclo Repetir (Do White)</li>
                </ul>
             
 
             <div class="font-sans">
                <h2 id='section2' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">2. Sintaxis</h2>
-               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ciclo While </h2>
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ciclo Mientras ( White )</h2>
                <hr class="border-b border-gray-400">
             </div>
             <p class="py-6">
-               El ciclo While ejecuta un bloque de código repetidamente mientras cierta condición es verdadera y deja de ejecutarla
+               El ciclo Mientras ó While ejecuta un bloque de código repetidamente mientras cierta condición es verdadera y deja de ejecutarla
                cuando la condición se vuelve falsa. La sintaxis se escribe, como se muestra a continuación:
             </p>
             <div class="container">
-               <img src="imgjs/sintaxis.svg" alt="ChitChat Logo">
+               <img src="img/sintaxis.svg" alt="ChitChat Logo">
             </div>
             <p>
-               El ciclo While primero analiza la condición, y si el resultado es verdaero procederá a ejecutar el bloque de instrucciones.
+               El ciclo Mientras primero analiza la condición, y si el resultado es verdaero procederá a ejecutar el bloque de instrucciones.
             </p>
             <div class="font-sans">
                <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">3. Ejemplos</h1>
@@ -223,53 +222,50 @@
                
             </div>
             <p class="py-2">
-               A continuación al comienzo del algoritmo que necesitamos para inicializar la variable ?. Inicializar no es más que asignar valor a esa variable para ser utilizada; por ejemplo: x=1.   Tras la inicialización, aplicaremos el
-               ciclo While. En el ciclo While, estamos verificando la condición. por ejemplo, x <= 10. Aquí el ciclo comenzará si la
+               A continuación al comienzo del algoritmo que necesitamos para inicializar la variable ?. Inicializar no es más que asignar valor a esa variable para ser utilizada; por ejemplo: x<-1. Tras la inicialización, aplicaremos el
+               ciclo Mientras. En el ciclo Mientras, estamos verificando la condición. por ejemplo, x <= 10. Aquí el ciclo comenzará si la
                   condición es verdadera. Si la condición es falsa, saldremos del ciclo. En general, cuando hablamos de
-                  salir del ciclo necesitamos operadores de incremento x=x+1;  ó x++. 
-                  veamos el ejemplo:
+                  salir del ciclo necesitamos operadores de incremento x=x+1; veamos el ejemplo:
             </p>
             <div class="container">
-               <img src="imgjs/index_w1.svg" alt="ChitChat Logo">
-               <div class="py-2">
-               <img  src="imgjs/while_1.svg" alt="ChitChat Logo">
-               </div>
+               <img  src="img/mientras1.svg" alt="ChitChat Logo">
                <div class="py-2">
                   <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"  >
                      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                    <a href="ejemplos_js/proyecto1_js/index.html"><span>Descarga</span></a> 
+                    <a href="ejemplos/ej_mientras_1.psc"><span>Descarga</span></a> 
                   </button>
                </div>
             </div>
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
                <p>
-                  El Mensaje “Los números: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x <= 10 sea verdadera,
+                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x <= 10 sea verdadera,
                      cuando llegue a incrementar (hasta 10) entonces, cierra el ciclo, y muestra el resultado a continuacion:
           
                </p>
             </div>
             
+            <div class="container">
+               <img src="img/resultado1.svg" alt="ChitChat Logo">
+            </div>
+
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 2: Decremento</h2>
                
             </div>
             <p class="py-2">
-               Pensemos en un ejemplo con el contador que decrementa. Hasta ahora hemos visto el ciclo While con un contador de incremento
+               Pensemos en un ejemplo con el contador que decrementa. Hasta ahora hemos visto el ciclo Mientras con un contador de incremento
                . Ahora, observaremos el operador de decremento (-). El operador de decremento como nombre sugiere reduce el valor de una variable contadora x según el requisito dado. El Ciclo se
                detendrá cuando la condición sea falsa.
             </p>
             <div class="container">
-               <img src="imgjs/index_w2.svg" alt="ChitChat Logo">
-               <div class="py-2">
-                  <img src="imgjs/while_2.svg" alt="ChitChat Logo">
-               </div>
+               <img src="img/mientras2.svg" alt="ChitChat Logo">
                <div class="py-2">
                   <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                     <a href="ejemplos_js/proyecto2_js/index.html"><span>Descarga</span></a>
+                     <a href="ejemplos/ej_mientras_2.psc"><span>Descarga</span></a>
                   </button>
                </div>
             </div>
@@ -277,54 +273,59 @@
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
                <p >
-                  El Mensaje “Los números descendentes: ” y la variable x, se imprimen hasta 10 veces. Mientras que La condición x >= 1 sea verdadera,
-                  cuando llegue a decrementar (de n hasta 1) entonces, cierra el ciclo, y muestra el resultado a continuacion:
+                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x >= 1 sea verdadera,
+                  cuando llegue a decrementar (de 10 hasta 1) entonces, cierra el ciclo, y muestra el resultado a continuacion:
                </p>
             </div>
             
-            
+            <div class="container">
+               <img src="img/resultado2.svg" alt="ChitChat Logo">
+            </div>
 
 
             <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 3: While con condición anidada</h2>
+               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 3: Mientras con condicion anidada</h2>
             
             </div>
             <p class="py-2">
-               Pensemos en un ejemplo con un While y una condición anidada. Hasta ahora hemos visto el ciclo While con un contador de
-               incremento ó decremento, pero en algunos casos debemos añadir al bloque de codigo una o varias condiciones que permitan validar una condicion interna, para este caso se debe verifica que los números que se muestren sean pares con un IF x % 2 ==0 y asi poder seleccionar los números.
+               Pensemos en un ejemplo con un mientras y una condicion anidada. Hasta ahora hemos visto el ciclo Mientras con un contador de
+               incremento
+               . Ahora, observaremos el operador de decremento (-). El operador de decremento como nombre sugiere reduce el valor de
+               una variable contadora x según el requisito dado. El Ciclo se
+               detendrá cuando la condición sea falsa.
             </p>
             <div class="container">
-               <img src="imgjs/index_w3.svg" alt="ChitChat Logo">
-               <div class="py-2">
-                  <img src="imgjs/while_3.svg" alt="ChitChat Logo">
-               </div>
+               <img src="img/mientras3.svg" alt="ChitChat Logo">
                <div class="py-2">
                   <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
                      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                     <a href="ejemplos_js/proyecto3_js/index.html"><span>Descarga</span></a>
+                     <a href="ejemplos/ej_mientras_3.psc"><span>Descarga</span></a>
                   </button>
             </div>
             
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
                <p>
-                  El Mensaje “Los números pares: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x <=10 sea
+                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x >= 1 sea
                   verdadera,
-                  cuando llegue a incrementar (de n hasta 10) entonces, cierra el ciclo, y muestra el resultado a continuacion:
+                  cuando llegue a decrementar (de 10 hasta 1) entonces, cierra el ciclo, y muestra el resultado a continuacion:
                </p>
             </div>
             
+            <div class="container">
+               <img src="img/resultado3.svg" alt="ChitChat Logo">
+            </div>
             <div class="font-sans">
                <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">4. Ejercicios</h1>
                <hr class="border-b border-gray-400">
             </div>
             <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Actividad #5:Javascript: Estrutura de Control Iterativa ( While)</h2>
+               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Actividad #11:PseInt: Estrutura de Control Iterativa ( Mientras)</h2>
             
             </div>
             <p class="py-2">
-               Desarrolla en Javascript de forma individual utilizando estructura de control iterativo While, resolver cada uno de los ejercicios a continuación:
+               Desarrolla de forma individual utilizando PseInt,  estructura de control iterativo Mientras, cada uno de los ejercicios a continuación:
             </p>
             <div class="container">
                <img src="img/ejercicios.jpg" alt="ChitChat Logo">
@@ -339,10 +340,10 @@
             <!-- util -->
             <hr class="border-b border-gray-400 py-4">
             <div class="flex items-center">
-               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-yellow-100 hover:text-green-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-purple-100 hover:text-green-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"/>
                </svg>
-               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-yellow-100 hover:text-red-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-purple-100 hover:text-red-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z"/>
                </svg>
                <div class="pl-4">
@@ -356,7 +357,7 @@
 
          <!--enlace arriba -->
          <div class="w-full lg:w-4/5 lg:ml-auto text-base md:text-sm text-gray-500 px-4 py-6">
-            <span class="text-base text-yellow-500 font-bold">&lt;</span> <a href="#" class="text-base md:text-sm text-yellow-500 font-bold no-underline hover:underline">Arriba</a>
+            <span class="text-base text-purple-500 font-bold">&lt;</span> <a href="#" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Arriba</a>
          </div>
       </div>
       <!--main container fin-->
@@ -500,8 +501,8 @@
                lastId = id;
                // Set/remove active class
                menuItems
-                  .parent().removeClass("font-bold border-yellow-500")
-                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-yellow-500");
+                  .parent().removeClass("font-bold border-purple-400")
+                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-purple-400");
             }
          });
 
