@@ -17,6 +17,7 @@
          @import url('https://fonts.googleapis.com/css?family=Lato');
          html { font-family: 'Lato', sans-serif; }
       </style>
+      
    </head>
    <body class="bg-gray-100 tracking-wider tracking-normal">
       <!--header inicio-->
@@ -117,19 +118,39 @@
                      <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                      <span class="pb-1 md:pb-0 text-sm">2. Sintaxis</span>
                      </a>
+                        <!--Ciclos-->  
+                           <div class="bg-white shadow w-64 my-2">
+                              <ul class="list-reset">
+                                 <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  "  >
+                                    <a href="pseint_mientras.html"
+                                       class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                                       <span class="pb-1 md:pb-0 text-sm">Mientras (While)</span></a>
+                                 </li>
+                                 <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  ">
+                                    <a href="pseint_para.html"
+                                       class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                                       <span class="pb-1 md:pb-0 text-sm">Para (For)</span></a>
+                                 </li>
+                                 <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  ">
+                                    <a href="#"
+                                       class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                                       <span class="pb-1 md:pb-0 text-sm">Repetir (Do While)</span></a>
+                                 </li>
+                                 
+                              </ul>
+                           </div>
+
+                        <!--/ciclos-->
+
                   </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent  ">
+                 
+                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
                      <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
-                     <span class="pb-1 md:pb-0 text-sm">3. Ejemplos</span>
+                     <span class="pb-1 md:pb-0 text-sm">3. Ejercicios</span>
                      </a>
                   </li>
                   <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
-                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
-                     <span class="pb-1 md:pb-0 text-sm">4. Ejercicios</span>
-                     </a>
-                  </li>
-                  <li class="py-2 md:my-0 hover:bg-purple-100 lg:hover:bg-transparent ">
-                     <a href='#section5'
+                     <a href='#section4'
                         class="block pl-4 align-middle text-gray-700 no-underline hover:text-purple-500 border-l-4 border-transparent lg:hover:border-gray-400">
                         <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
                      </a>
@@ -144,8 +165,14 @@
          <div class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
             <!--Titulo-->
             <div class="font-sans">
+               
+               <button class="bg-gray-300 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                  <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                     <path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z" /></svg>
+                     <a href="./index.html" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:no-underline"><span> Inicio</span></a>
+               </button>
                <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">1. Introducción</h1>
-               <span class="text-base text-purple-500 font-bold">&laquo;</span> <a href="#" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Anterior</a>
+               
                <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Que es un Ciclo o Bucle ?</h1>
                <hr class="border-b border-gray-400">
             </div>
@@ -196,128 +223,10 @@
                   <li>Ciclo Para (For)</li>
                   <li>Ciclo Repetir (Do White)</li>
                </ul>
-            
-
+         
+            <!--Ejercicos-->
             <div class="font-sans">
-               <h2 id='section2' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">2. Sintaxis</h2>
-               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ciclo Mientras ( White )</h2>
-               <hr class="border-b border-gray-400">
-            </div>
-            <p class="py-6">
-               El ciclo Mientras ó While ejecuta un bloque de código repetidamente mientras cierta condición es verdadera y deja de ejecutarla
-               cuando la condición se vuelve falsa. La sintaxis se escribe, como se muestra a continuación:
-            </p>
-            <div class="container">
-               <img src="img/sintaxis.svg" alt="ChitChat Logo">
-            </div>
-            <p>
-               El ciclo Mientras primero analiza la condición, y si el resultado es verdaero procederá a ejecutar el bloque de instrucciones.
-            </p>
-            <div class="font-sans">
-               <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">3. Ejemplos</h1>
-               <hr class="border-b border-gray-400">
-            </div>
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 1: Incremento</h2>
-               
-            </div>
-            <p class="py-2">
-               A continuación al comienzo del algoritmo que necesitamos para inicializar la variable ?. Inicializar no es más que asignar valor a esa variable para ser utilizada; por ejemplo: x<-1. Tras la inicialización, aplicaremos el
-               ciclo Mientras. En el ciclo Mientras, estamos verificando la condición. por ejemplo, x <= 10. Aquí el ciclo comenzará si la
-                  condición es verdadera. Si la condición es falsa, saldremos del ciclo. En general, cuando hablamos de
-                  salir del ciclo necesitamos operadores de incremento x=x+1; veamos el ejemplo:
-            </p>
-            <div class="container">
-               <img  src="img/mientras1.svg" alt="ChitChat Logo">
-               <div class="py-2">
-                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"  >
-                     <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                    <a href="ejemplos/ej_mientras_1.psc"><span>Descarga</span></a> 
-                  </button>
-               </div>
-            </div>
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
-               <p>
-                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x <= 10 sea verdadera,
-                     cuando llegue a incrementar (hasta 10) entonces, cierra el ciclo, y muestra el resultado a continuacion:
-          
-               </p>
-            </div>
-            
-            <div class="container">
-               <img src="img/resultado1.svg" alt="ChitChat Logo">
-            </div>
-
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 2: Decremento</h2>
-               
-            </div>
-            <p class="py-2">
-               Pensemos en un ejemplo con el contador que decrementa. Hasta ahora hemos visto el ciclo Mientras con un contador de incremento
-               . Ahora, observaremos el operador de decremento (-). El operador de decremento como nombre sugiere reduce el valor de una variable contadora x según el requisito dado. El Ciclo se
-               detendrá cuando la condición sea falsa.
-            </p>
-            <div class="container">
-               <img src="img/mientras2.svg" alt="ChitChat Logo">
-               <div class="py-2">
-                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                     <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                     <a href="ejemplos/ej_mientras_2.psc"><span>Descarga</span></a>
-                  </button>
-               </div>
-            </div>
-            
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
-               <p >
-                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x >= 1 sea verdadera,
-                  cuando llegue a decrementar (de 10 hasta 1) entonces, cierra el ciclo, y muestra el resultado a continuacion:
-               </p>
-            </div>
-            
-            <div class="container">
-               <img src="img/resultado2.svg" alt="ChitChat Logo">
-            </div>
-
-
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 3: Mientras con condicion anidada</h2>
-            
-            </div>
-            <p class="py-2">
-               Pensemos en un ejemplo con un mientras y una condicion anidada. Hasta ahora hemos visto el ciclo Mientras con un contador de
-               incremento
-               . Ahora, observaremos el operador de decremento (-). El operador de decremento como nombre sugiere reduce el valor de
-               una variable contadora x según el requisito dado. El Ciclo se
-               detendrá cuando la condición sea falsa.
-            </p>
-            <div class="container">
-               <img src="img/mientras3.svg" alt="ChitChat Logo">
-               <div class="py-2">
-                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                     <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-                     <a href="ejemplos/ej_mientras_3.psc"><span>Descarga</span></a>
-                  </button>
-            </div>
-            
-            <div class="font-sans">
-               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
-               <p>
-                  El Mensaje “El número es: ” y la variable x, se imprimen hasta 10 veces. Mientras La condición x >= 1 sea
-                  verdadera,
-                  cuando llegue a decrementar (de 10 hasta 1) entonces, cierra el ciclo, y muestra el resultado a continuacion:
-               </p>
-            </div>
-            
-            <div class="container">
-               <img src="img/resultado3.svg" alt="ChitChat Logo">
-            </div>
-            <div class="font-sans">
-               <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">4. Ejercicios</h1>
+               <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">4. Ejercicios</h1>
                <hr class="border-b border-gray-400">
             </div>
             <div class="font-sans">
@@ -357,13 +266,14 @@
 
          <!--enlace arriba -->
          <div class="w-full lg:w-4/5 lg:ml-auto text-base md:text-sm text-gray-500 px-4 py-6">
-            <span class="text-base text-purple-500 font-bold">&lt;</span> <a href="#" class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Arriba</a>
+            <span class="text-base text-purple-500 font-bold">&lt;</span> <a href="#"
+               class="text-base md:text-sm text-purple-500 font-bold no-underline hover:underline">Arriba</a>
          </div>
       </div>
       <!--main container fin-->
 
       <!--footer inicio-->
-      <footer id='section5' class="bg-white border-t border-gray-400 shadow">
+      <footer id='section4' class="bg-white border-t border-gray-400 shadow">
          <div class="container mx-auto flex py-8">
             <div class="w-full mx-auto flex flex-wrap">
                <div class="flex w-full lg:w-1/2 ">
