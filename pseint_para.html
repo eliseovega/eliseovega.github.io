@@ -342,9 +342,175 @@
             <div class="container">
                <img src="img/resultado3.svg" alt="ChitChat Logo">
             </div>
+
+            <div class="font-sans">
+               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 4: Para con condición anidada</h2>
+            
+            </div>
+            <p class="py-6">
+               Explicación paso a paso:
+            </p>
+            <ul class="border-l-4 border-purple-500 pl-8 md:pl-12 list-disc list-inside  py-2 font-sans ">
+               <li>Capturamos los valores por pantalla de las variable <code class="bg-gray-300 text-red-500">X</code>
+                  y <code class="bg-gray-300 text-red-500">Z</code>, como valores de inicio y fin del ciclo
+               </li>
+               <li>Al ingresar a la estructura de control Para , la variable númerica <code
+                     class="bg-gray-300 text-red-500">X</code> recibe el valor que escriba el usuario y ese valor se le asigna a la variable <code class="bg-gray-300 text-red-500">i</code>; a partir de ese valor inicia el ciclo
+               </li>
+               <li>Seguido el usuario escribe el segundo valor y se asigna en la variable <code class="bg-gray-300 text-red-500">Z</code>, este es el valor final hasta donde llega el ciclo para</li>
+               <li>Se incrementa la variable <code class="bg-gray-300 text-red-500">i</code> en paso
+                  <code class="bg-gray-300 text-red-500">1</code> y se evalúa si el valor
+                  almacenado en <code class="bg-gray-300 text-red-500">i</code> superó al
+                  valor de la variable <code class="bg-gray-300 text-red-500">Z</code> </li>
+               <li>En el proceso se evualua que <code class="bg-gray-300 text-red-500">i</code> mod 2 el residuo sea igual a 0,
+                  si se cumple la condición, se impriran los valores pares de <code class="bg-gray-300 text-red-500">i</code> 
+               </li>
+            
+               <li>Si no se ha cumplido la condición ó no ha llegado a <code class="bg-gray-300 text-red-500">Z</code>,
+                  se repite hasta que el valor de <code class="bg-gray-300 text-red-500">i</code> supere a <code class="bg-gray-300 text-red-500">Z</code>
+               </li>
+            </ul>
+            <div class="py-4 container">
+               <img src="img/para4.svg" alt="">
+               <div class="py-2">
+                  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                     <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path
+                           d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                     </svg>
+                     <a href="ejemplos_pseint/ej_para_4.psc"
+                        class="text-base md:text-sm text-purple-500 font-bold no-underline hover:no-underline"><span>Demostración</span></a>
+                  </button>
+               </div>
+            
+               <div class="font-sans">
+                  <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
+            
+               </div>
+            
+               <div class="container">
+                  <img src="img/resultado4.svg" alt="ChitChat Logo">
+               </div>
+
+               <div class="font-sans">
+                  <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 5: Para con operaciones secuenciales</h2>
+               
+               </div>
+               <p class="py-6">
+                  Explicación paso a paso:
+               </p>
+               <ul class="border-l-4 border-purple-500 pl-8 md:pl-12 list-disc list-inside  py-2 font-sans ">
+                  <li>Capturamos los valores por pantalla de las variable <code class="bg-gray-300 text-red-500">X</code>
+                     y <code class="bg-gray-300 text-red-500">Z</code>, como valores de inicio y fin del ciclo
+                  </li>
+                  <li>Al ingresar a la estructura de control Para , la variable númerica <code
+                        class="bg-gray-300 text-red-500">X</code> recibe el valor que escriba el usuario y ese valor se le asigna a la
+                     variable <code class="bg-gray-300 text-red-500">i</code>; a partir de ese valor inicia el ciclo
+                  </li>
+                  <li>Seguido el usuario escribe el segundo valor y se asigna en la variable <code
+                        class="bg-gray-300 text-red-500">Z</code>, este es el valor final hasta donde llega el ciclo para</li>
+                  <li>Se incrementa la variable <code class="bg-gray-300 text-red-500">i</code> en paso
+                     <code class="bg-gray-300 text-red-500">1</code> y se evalúa si el valor
+                     almacenado en <code class="bg-gray-300 text-red-500">i</code> superó al
+                     valor de la variable <code class="bg-gray-300 text-red-500">Z</code> </li>
+                  <li>En el proceso se suma el acumulador <code class="bg-gray-300 text-red-500">suma</code> y el contador <code class="bg-gray-300 text-red-500">i</code>, esta operación se acumula en <code class="bg-gray-300 text-red-500">suma</code>
+                  </li>
+               
+                  <li>Si no se ha cumplido la condición ó no ha llegado a <code class="bg-gray-300 text-red-500">Z</code>,
+                     se repite hasta que el valor de <code class="bg-gray-300 text-red-500">i</code> supere a <code
+                        class="bg-gray-300 text-red-500">Z</code>
+                  </li>
+                  <li>Cuando finaliza el ciclo, el acumulador <code class="bg-gray-300 text-red-500">suma</code>,
+                     ha guardado la suma de cada ciclo realizado, este a su vez se imprime como resultado fuera de ciclo.
+                  </li>
+               </ul>
+               <div class="py-4 container">
+                  <img src="img/para5.svg" alt="">
+                  <div class="py-2">
+                     <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                        <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path
+                              d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                        </svg>
+                        <a href="ejemplos_pseint/ej_para_5.psc"
+                           class="text-base md:text-sm text-purple-500 font-bold no-underline hover:no-underline"><span>Demostración</span></a>
+                     </button>
+                  </div>
+               
+                  <div class="font-sans">
+                     <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
+               
+                  </div>
+               
+                  <div class="container">
+                     <img src="img/resultado5.svg" alt="">
+                  </div>
+
+
+                  <div class="font-sans">
+                     <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplos 6: Para con operaciones
+                        secuenciales</h2>
+                  
+                  </div>
+                  <p class="py-6">
+                     Explicación paso a paso:
+                  </p>
+                  <ul class="border-l-4 border-purple-500 pl-8 md:pl-12 list-disc list-inside  py-2 font-sans ">
+                     <li>Capturamos el valor de la variable <code class="bg-gray-300 text-red-500">factor</code> ingresado por el usuario para la multiplicación
+                     </li>
+                     <li>Al ingresar a la estructura de control Para , la variable númerica <code
+                           class="bg-gray-300 text-red-500">X</code> recibe el valor inicial de 1 </li>
+                     <li>Seguido se asigna el valor final hasta donde llegara el ciclo <code class="bg-gray-300 text-red-500">10</code></li>
+                     <li>Se incrementa la variable <code class="bg-gray-300 text-red-500">X</code> en paso
+                        <code class="bg-gray-300 text-red-500">1</code> y se evalúa si el valor
+                        almacenado en <code class="bg-gray-300 text-red-500">X</code> superó al
+                        valor final <code class="bg-gray-300 text-red-500">10</code> </li>
+                     <li>En el proceso se evualua que <code class="bg-gray-300 text-red-500">producto<-x*factor</code> la multiplicacion se guarde en la variable <code class="bg-gray-300 text-red-500">producto</code> y se calcule cada vez ingrese al ciclo imprimiendo cada resultado hasta finalizar
+                     </li>
+                  
+                     <li>Si no se ha cumplido la condición ó no ha llegado a <code class="bg-gray-300 text-red-500">10</code>,
+                        se repite hasta que el valor de <code class="bg-gray-300 text-red-500">X</code> supere a <code
+                           class="bg-gray-300 text-red-500">10</code>
+                     </li>
+                  </ul>
+                  <div class="py-4 container">
+                     <img src="img/para6.svg" alt="">
+                     <div class="py-2">
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                           <svg class="h-5 pr-3 fill-current text-purple-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                              <path
+                                 d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                           </svg>
+                           <a href="ejemplos_pseint/ej_para_6.psc"
+                              class="text-base md:text-sm text-purple-500 font-bold no-underline hover:no-underline"><span>Demostración</span></a>
+                        </button>
+                     </div>
+                  
+                     <div class="font-sans">
+                        <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Salida</h2>
+                  
+                     </div>
+                  
+                     <div class="container">
+                        <img src="img/resultado6.svg" alt="">
+                     </div>
+
+
             <div class="font-sans">
                <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">4. Ejercicios</h1>
                <hr class="border-b border-gray-400">
+            </div>
+            <div class="font-sans">
+               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Actividad #13:PseInt: Estrutura de
+                  Control Iterativa (Para)</h2>
+            
+            </div>
+            <p class="py-2">
+               Desarrolla de forma individual utilizando PseInt, estructura de control iterativo Para, cada uno de los ejercicios a
+               continuación:
+            </p>
+            <div class="container">
+               <img src="img/ejercicios2.svg" alt="">
             </div>
             <div class="font-sans">
                <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Actividad #12:PseInt: Estrutura de Control Iterativa (Para)</h2>
@@ -354,7 +520,7 @@
                Desarrolla de forma individual utilizando PseInt,  estructura de control iterativo Para, cada uno de los ejercicios a continuación:
             </p>
             <div class="container">
-               <img src="img/ejercicios.jpg" alt="">
+               <img src="img/ejercicios1.svg" alt="">
             </div>
 
 
