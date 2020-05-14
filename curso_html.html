@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Guia de HTML</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      
+      <!-- Font Awesome Iconos  -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <!--Frameword tailwindcss modo CDN-->
+      <link href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.css" rel="stylesheet">
+      <!--Libreria PrismJs modo CDN-->
+      <link rel="stylesheet" href="css/prism.css">
+
+      <!--Font Google-->
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Lato', sans-serif; }
+      </style>
+      <!--<link rel="stylesheet" href="css/app.css">-->
+   </head>
+   <body class="bg-gray-100 tracking-wider tracking-normal">
+      <!--header inicio-->
+      <nav id="header" class="fixed w-full z-10 top-0 bg-white border-b border-gray-400">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="221.807 89.47 440 621.061" enable-background="new 221.807 89.47 440 621.061"><filter id="a" width="150%" height="150%" x="-5%" y="-5%"><feFlood flood-color="#000" result="floodFill" flood-opacity=".5"/><feComposite in="floodFill" in2="SourceAlpha" operator="in" result="coloredAlpha"/><feGaussianBlur in="coloredAlpha" result="blur" stdDeviation="8"/><feComposite in="blur" in2="SourceGraphic" operator="out" result="maskedOffsetBlur"/><feMerge><feMergeNode in="maskedOffsetBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><g filter="url(#a)"><path fill="#e44d26" d="M261.849 660.647l-40.042-449.125h440l-40.086 449.054-180.184 49.954z"/><path fill="#f16529" d="M441.807 672.348l145.596-40.367 34.258-383.735H441.807z"/><path fill="#ebebeb" d="M441.807 414.82h-72.888l-5.035-56.406h77.923V303.33H303.683l1.32 14.778 13.538 151.794h123.266zM441.807 557.876l-.242.066-61.346-16.566-3.922-43.93h-55.294l7.718 86.489 112.834 31.323.252-.071z"/><path d="M262.745 89.47h27.992v27.656h25.606V89.47h27.993v83.75h-27.993v-28.044h-25.606v28.044h-27.99l-.002-83.75zM381.149 117.244h-24.642V89.47H433.8v27.774h-24.654v55.976H381.15v-55.976h-.001zM446.065 89.47h29.19l17.955 29.428 17.938-29.428h29.2v83.75h-27.882v-41.512l-19.259 29.778h-.481l-19.272-29.778v41.512h-27.39V89.47zM554.277 89.47h28v56.068h39.368v27.682h-67.368V89.47z"/><path fill="#fff" d="M441.617 414.82v55.082h67.83l-6.395 71.44-61.435 16.58v57.307l112.924-31.294.826-9.309 12.946-145.014 1.344-14.792h-14.842zM441.617 303.33v55.084H574.67l1.103-12.382 2.51-27.924 1.318-14.778z"/></g></svg>
+               <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
+               HTML: FUNDAMENTOS 
+               </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-orange-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <title>Menu</title>
+                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+               <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+                  <div class="relative pull-right pl-4 pr-4 md:pr-0">
+                     <input type="search" placeholder="Buscar" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-orange-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                     <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                        <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+               <ul class="list-reset lg:flex justify-end items-center">
+                  
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://github.com/eliseovega/" data-tippy-content="@github_eliseovega">
+                        <svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>GitHub</title>
+                           <path
+                              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.youtube.com/channel/UCFYXmYlRbH8FRfhm9LIliNQ" data-tippy-content="@desarrollapp"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 24 24">
+                           <title>YouTube</title>
+                           <path
+                              d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                        </svg></a>
+
+                     
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.facebook.com/groups/485696102126068" data-tippy-content="@facebook_ADSI"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>Facebook</title>
+                           <path
+                              d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
+                        </svg></a>
+                  
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!--header fin-->
+
+      <!--inicio del super menu-->
+      <div class="bg-gray-900 pt-6">
+         <div class="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+           <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+             <div>
+               <p class="text-base leading-6 font-semibold text-orange-500 uppercase tracking-wider">
+                 Formación para el Trabajo
+               </p>
+               <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">Curso de Fundamentos de HTML</h2>
+               <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">
+                  Bienvenidos estimados aprendices al curso de HTML Básico, en este curso aprenderán los fundamentos de este lenguaje de marcado llamado HTML, el cual se utiliza para crear paginas web, sitios web y aplicaciones web , asi que asi no te preocupes estas en el lugar correcto para aprender desde lo mas básico y fundamental para crear paginas web. 
+               </p>
+               <div class="mt-6 flex">
+                 <a href="#" target="_blank" class="inline-flex items-start text-lg leading-6 font-medium text-orange-500 hover:text-orange-300 transition ease-in-out duration-150">
+                   <svg class="flex-shrink-0 mr-3 h-9 w-9 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                     <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                     <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                   </svg>
+                   <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">Tematica</span>
+                   <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Requisitos: Un Navegador y un editor de codigo</span>
+                 </a>
+               </div>
+             </div>
+             <div class="mt-8 lg:mt-0">
+               <div class="max-w-lg lg:ml-auto lg:max-w-xl">
+                 <a href="#section1" class=" mt-3 flex items-start rounded-lg border border-orange-500 px-5 py-4 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                   <svg class="mr-3 h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                   </svg>
+                   Generalidades
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                 <a href="etiquetas_texto.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"></path></svg>
+                   Etiquetas para Texto
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                 <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>
+                   Etiquetas para Enlaces
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                 <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="list" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>
+                  Etiquetas para Listas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="image" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 336H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h404a6 6 0 0 1 6 6v276a6 6 0 0 1-6 6zM128 152c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zM96 352h320v-80l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L192 304l-39.515-39.515c-4.686-4.686-12.284-4.686-16.971 0L96 304v48z"></path></svg>
+                  Etiquetas para Imagenes
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg>
+                  Etiquetas para Tablas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="wpforms" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 75.2v361.7c0 24.3-19 43.2-43.2 43.2H43.2C19.3 480 0 461.4 0 436.8V75.2C0 51.1 18.8 32 43.2 32h361.7c24 0 43.1 18.8 43.1 43.2zm-37.3 361.6V75.2c0-3-2.6-5.8-5.8-5.8h-9.3L285.3 144 224 94.1 162.8 144 52.5 69.3h-9.3c-3.2 0-5.8 2.8-5.8 5.8v361.7c0 3 2.6 5.8 5.8 5.8h361.7c3.2.1 5.8-2.7 5.8-5.8zM150.2 186v37H76.7v-37h73.5zm0 74.4v37.3H76.7v-37.3h73.5zm11.1-147.3l54-43.7H96.8l64.5 43.7zm210 72.9v37h-196v-37h196zm0 74.4v37.3h-196v-37.3h196zm-84.6-147.3l64.5-43.7H232.8l53.9 43.7zM371.3 335v37.3h-99.4V335h99.4z"></path></svg>
+                  Etiquetas para Formularios
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                  </svg>
+                  Estructura Semantica
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+      <!--fin del super menu-->
+
+
+      <!--main container inicio-->
+      <div class="container w-full flex flex-wrap mx-auto px-2 pt-4 lg:pt-16 mt-16">
+
+         <!--menu inicio-->
+         <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+            <p class="text-base font-bold py-2 lg:pb-6 text-gray-700"></p>
+            <div class="block lg:hidden sticky inset-0">
+               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-orange-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+               <ul class="list-reset">
+
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent">
+                     <a href='#section1'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:border-orange-500 lg:hover:border-orange-500">
+                        <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Introducción</span>
+                     </a>
+                  </li>
+                  
+                  
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent   ">
+              
+                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">2. Elemento</span>
+                     </a>
+
+                     
+                  </li>
+                  
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">3. Atributos</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">4. Elementos Anidados</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section5' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">5. Documento HTML</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section6' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">6. Estructura Básica</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section7' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">7. Bloque y linea</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section8' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">Actividades</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section9'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                        <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
+                     </a>
+                  </li>
+                  
+               </ul>
+            </div>
+         </div>
+         <!--menu fin-->
+
+         <!--secciones inicio-->
+         <div class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
+            <!--Titulo-->
+            <div class="font-sans">
+               <button class="bg-gray-200 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                  <svg class="h-5 pr-3 fill-current text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                     <path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z" /></svg>
+                  <a href="./index.html" class="text-base md:text-sm text-gray-700 font-bold no-underline hover:no-underline"><span>
+                        Inicio</span></a>
+               </button>
+               <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">1. Introducción</h1>
+               
+               <h1 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Que es un HTML ?</h1>
+               <hr class="border-b border-gray-400">
+            </div>
+            <!--Fin Titulo-->
+            <!--Lead Para-->
+            <p class="py-6">
+               HTML es un lenguaje de marcación que sirve para definir el contenido de las páginas web. Se compone en base a etiquetas,
+               también llamadas marcas o tags, con las cuales conseguimos expresar las partes de un documento, cabecera, cuerpo,
+               encabezados, párrafos, etc. En definitiva, el contenido de una página web. Por ejemplo, tomemos la siguiente línea de contenido:
+            </p>
+
+         
+            <!--codinig-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <div class="bg-gray-200 p-4">
+                     <span class="block text-gray-700 text-left bg-gray-400 px-4 py-2">Soy un aprendiz Sena </span>
+                  </div>
+                  <p>Si queremos especificar que es un párrafo se encierra con una etiqueta de elemento párrafo asi: </p>
+               </div>
+               
+               <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch text-white" >&lt;p&gt;Soy un aprendiz Sena &lt;/p&gt;
+               </code></pre>
+               </div>
+            </div>
+            <!--/codinig-->
+
+
+                 
+            
+                  <div  id='section2'class="font-sans">
+                     <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Anatomía de un elemento HTML</h2>
+                     <hr class="border-b border-gray-400">
+                     <p class="py-6" >Cómo ya hemos dicho es un lenguaje de marcas (etiquetas). Así que todo nuestro texto estará encerrado entre etiquetas:
+                     Una etiqueta de inicio y
+                     una etiqueta de fin.</p>
+                  </div>
+                  <!--Caja de codigo-->
+                  <div class="relative overflow-hidden mb-8">
+                     <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                        <span class="py-6">
+                           
+                           Partes de un elementos, sigamos con el ejemplo del elemento parrafo:
+                        </span>
+                     </div>
+                     <div v-img class="rounded-b-lg bg-gray-800">
+                        <img class="rounded-lg w-full object-cover" src="imgh/anatomia.svg" alt="">
+                     </div>
+                  </div>
+                  <!--/Caja de codigo-->
+
+                  <!--linea de tiempo -->
+                  <div class="py-6 bg-white">
+                     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                        
+                  
+                        <div class="mt-10">
+                           <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                              <li>
+                                 <div class="flex">
+                                    <div class="flex-shrink-0">
+                                       <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                          <span
+                                             class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">&lt;p&gt;</span>
+                                       </div>
+                                    </div>
+                                    <div class="ml-4 ">
+                                       <h5 class="text-lg leading-6 font-medium text-gray-900">Etiqueta de apertura:</h5>
+                                       <p class="mt-2 text-base leading-6 text-gray-500">
+                                          Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los carácteres < y >. Aunque no es
+                                             terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en
+                                             minúsculas.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="mt-10 md:mt-0">
+                                 <div class="flex">
+                                    <div class="flex-shrink-0">
+                                       <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                          <span class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">&lt;/p&gt;</span>
+                                       </div>
+                                    </div>
+                                    <div class="ml-4">
+                                       <h5 class="text-lg leading-6 font-medium text-gray-900">Etiqueta de cierre:</h5>
+                                       <p class="mt-2 text-base leading-6 text-gray-500">
+                                          Es lo mismo que la etiqueta de apertura, excepto que incluye una barra diagonal antes del nombre del elemento. Esto
+                                          indica dónde termina el elemento; en este caso, dónde finaliza el párrafo. No incluir una etiqueta de cierre es un error, y puede conducir a resultados extraños.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="mt-10 md:mt-0">
+                                 <div class="flex">
+                                    <div class="flex-shrink-0">
+                                       <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                          </svg>
+                                       </div>
+                                    </div>
+                                    <div class="ml-4">
+                                       <h5 class="text-lg leading-6 font-medium text-gray-900">Contenido:</h5>
+                                       <p class="mt-2 text-base leading-6 text-gray-500">
+                                          En el interior del elemento (después de la etiqueta de apertura y antes de la etiqueta de cierre) se debe colocar
+                                          la información que queremos que sea afectada por dicha etiqueta.que en este caso es solo texto.
+                                       </p>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="mt-10 md:mt-0">
+                                 <div class="flex">
+                                    <div class="flex-shrink-0">
+                                       <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500 ">
+                                          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                          </svg>
+                                       </div>
+                                    </div>
+                                    <div class="ml-4">
+                                       <h5 class="text-lg leading-6 font-medium text-gray-900">Elemento:</h5>
+                                       <p class="mt-2 text-base leading-6 text-gray-500">
+                                          lo conforman la suma de la  <strong>etiqueta de apertura</strong> ,<strong>la etiqueta de cierre</strong>  y <strong>el contenido</strong> .
+                                       </p>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                 <!--/linea de tiempo-->
+                  
+                  
+
+            <div id='section3' class="font-sans">
+               <h2 class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Atributos</h2>
+               <hr class="border-b border-gray-400">
+            </div>
+            <p class="py-6">
+               En algunas etiquetas HTML, existen algunos atributos específicos (que pueden ser opcionales u obligatorios). Los
+               atributos determinan cierta información sobre la etiqueta (o su modo de actuar) y generalmente van asociados a un valor
+               determinado.
+            </p>
+
+            <!--Caja de codigo-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <span class="py-6">
+            
+                     Los elementos también pueden tener atributos, que tienen el aspecto siguiente, sigamos con el ejemplo del parrafo:
+                  </span>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/anatomia_atributo.svg" alt="">
+               </div>
+            </div>
+            <!--/Caja de codigo-->
+
+            <!--linea de tiempo -->
+            <div class="py-6 bg-white">
+               <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            
+                  <div class="mt-10">
+                     <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                        <li>
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">class</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4 ">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">Atributo:</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Se escribe después del nombre de la etiqueta tal como se ve en su anatomia, separándola por un espacio y el nombre del atributo, seguido por un signo igual, antes del carácter > de la etiqueta de apertura. cada atributo tiene una misión y comportamiento concreto.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">valor</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">Valor del Atributo:</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    El valor del atributo indica una función especifica. Aunque los valores pueden ir rodeados por comillas simples, se
+                                    recomienda escribir el valor siempre entre <strong>comillas dobles</strong> . 
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--/linea de tiempo-->
+
+            <div class="font-sans">
+               <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Elementos Anidados
+               </h1>
+               <hr class="border-b border-gray-400">
+            </div>
+            <p class="py-6">
+               También puedes poner elementos dentro de otros elementos; esto se llama anidamiento. Si quisiéramos decir "Soy un
+               aprendiz Sena de la formación ADSI"
+               podríamos encerrar la palabra «Sena» en un elemento &lt;strong&gt; para que aparezca destacada y encerrar la palabra
+               «Sena» en un elemento &lt;em&gt; para darle importancia, observemos el ejemplo:
+            </p>
+            
+            <!--Caja de codigo-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <span class="py-6">
+            
+                     <p>Soy un aprendiz <strong>Sena</strong> de la formación <em>ADSI</em> </p>
+                  </span>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/anidada.svg" alt="">
+               </div>
+            </div>
+
+            <p class="py-6">
+               En este caso vemos que la etiqueta &lt;p&gt; tiene como contenido a otra etiqueta &lt;strong&gt;. En este caso se dice que:
+            </p>
+
+            <!--linea de tiempo -->
+            <div class="py-6 bg-white">
+               <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            
+                  <div class="mt-10">
+                     <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                        <li>
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">padre</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4 ">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;p&gt; &lt;strong&gt; &lt;/strong&gt; &lt;em&gt; &lt;em&gt; &lt;/p&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    La etiqueta &lt;p&gt; es el <strong>padre</strong> de la etiqueta &lt;strong&gt; y &lt;em&gt;.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">hijas</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;strong&gt; &lt;/strong&gt; &lt;em&gt; &lt;em&gt; &lt;/p&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Las etiqueta &lt;strong&gt; y &lt;em&gt; son <strong>hijas</strong> de  &lt;p&gt; .
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">herm</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;strong&gt; &lt;/strong&gt; &lt;em&gt; &lt;em&gt; &lt;/p&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Las etiqueta &lt;strong&gt; y &lt;em&gt; son <strong>hermanas</strong>
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+            
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--/linea de tiempo-->
+
+
+            
+            <p class="py-6">
+               Debes asegurarte de que los elementos estén anidados adecuadamente: en el ejemplo anterior, primero abrimos el
+               elemento
+               p y luego el elemento strong y seguido el elemento em, por lo tanto, debemos cerrar primero el elemento strong y el
+               elemento em , y luego el p. Es incorrecto
+               hacerlo del modo siguiente:
+            </p>
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <span class="py-6">
+            
+                     <p>Soy un aprendiz <strong>Sena de la formación <em>ADSI </p></strong></em>
+                  </span>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/anidada_incorrecto.svg" alt="">
+               </div>
+            </div>
+
+            <!--anatomina del documento-->
+            <div class="font-sans">
+               <h2 id='section5' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Anatomia del documento HTML</h2>
+               <hr class="border-b border-gray-400">
+            </div>
+
+            <p class="py-6">
+               Un documento HTML debe tener siempre una estructura inicial, con algunas etiquetas y características obligatorias y
+               otras recomendables. Ese esquema es el siguiente, donde se diferencian tres partes principales:
+            </p>
+
+            <!--Caja de codigo-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <span class="py-6">
+            
+                    Partes principales del documento HTML:
+                  </span>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/anatomia_documento.svg" alt="">
+               </div>
+            </div>
+            <!--/Caja de codigo-->
+
+            <!--linea de tiempo -->
+            <div class="py-6 bg-white">
+               <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            
+                  <div class="mt-10">
+                     <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                        <li>
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">html</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4 ">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;html&gt; &lt;/html&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Este elemento engloba todo el contenido de la página y es conocido en ocasiones como el elemento raíz.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">head</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;head&gt; &lt;/head&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Este elemento actúa como contenedor para todos los parámetros que quieras incluir en el documento HTML que no será
+                                    visible a los visitantes de la página. Incluye cosas como palabras clave y la descripción de la página que quieras
+                                    mostrar en los resultados de búsqueda, así como la hoja de estilo para formatear nuestro contenido, declaraciones de
+                                    codificación de caracteres y más.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">body</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;body&gt; &lt;/body&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    Contiene todo el contenido que quieres mostrar a los usuarios cuando visitan tu página, ya sea texto, imágenes, vídeos,
+                                    juegos, pistas de audio reproducibles o cualquier otra cosa.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+            
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--/linea de tiempo-->
+
+            
+            <div class="font-sans">
+               <h1 id='section6' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Estructura básica de HTML5</h1>
+               <hr class="border-b border-gray-400">
+            </div>
+            <p class="py-6">
+               Hasta aquí alcanzan las bases de los elementos HTML de manera individual, aunque no son muy útiles por sí mismos. Ahora
+               veremos cómo combinar los elementos individuales para formar una página HTML completa
+            </p>
+
+            <!--Caja de codigo-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <span class="py-6">
+            
+                     Estructura básica del documento HTML5:
+                  </span>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/estructura_documento.svg" alt="">
+               </div>
+            </div>
+            <!--/Caja de codigo-->
+            <!--linea de tiempo -->
+            <div class="py-6 bg-white">
+               <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            
+                  <div class="mt-10">
+                     <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                        <li>
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">1</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4 ">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;!DOCTYPE html&gt; </h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su primera línea, es siempre conveniente indicar el tipo de documento a utilizar. Para indicar que se trata de un
+                                    documento HTML5.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">3</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;html lang="en"&gt; &lt;/html&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su tercera línea, en estas etiquetas debemos especificar la lengua en la que está redactado el contenido del documento, en nuestro caso se
+                                    trata de "en" ingles segun aparece en el ejemplo.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">6</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;meta charset="UTF-8"&gt; </h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su sexta línea, este elemento establece que tu documento HTML usará la codificación UTF-8, que incluye la gran mayoría de caracteres de
+                                    todos los idiomas humanos escritos. En resumen: puede gestionar cualquier contenido textual que pongas en tu documento.
+                                    No hay razón para no configurarlo y puede te ayudar a evitar problemas más adelante.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">7</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; </h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                 En su septima línea, Un elemento de ventana <code>&lt;meta&gt;</code> le da al navegador instrucciones sobre cómo controlar las dimensiones y la escala de la página.
+                                 Si estás diseñando flexiblemente, usa la etiqueta meta viewport te prepara para adaptar tu pagina a multi-dispositivo.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">8</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;title&gt; &lt;/title&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su octava línea, este elemento establece el título de la página, que aparece en la pestaña/ventana de tu navegador cuando la página se
+                                    carga y se utiliza para describir la página cuando la añades a tus marcadores o la marcas como favorita.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">10</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;body&gt; &lt;/body&gt;</h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su decima línea, en esta zona se incluyen todas las etiquetas HTML que si tienen repercusión visual en el navegador del usuario,
+                                    generalmente utilizadas para dibujar secciones o partes de una página.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="mt-10 md:mt-0">
+                           <div class="flex">
+                              <div class="flex-shrink-0">
+                                 <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-300 hover:bg-gray-200 text-orange-500">
+                                    <span
+                                       class="h-10 w-10 pt-0.5  flex items-center justify-center rounded-full text-lg leading-10 font-display font-bold text-orange-500">12</span>
+                                 </div>
+                              </div>
+                              <div class="ml-4">
+                                 <h5 class="text-lg leading-6 font-medium text-gray-900">&lt;&#33;--Comentario en HTML-- &gt; </h5>
+                                 <p class="mt-2 text-base leading-6 text-gray-500">
+                                    En su doceava línea, Como se puede ver, para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto
+                                    < !-- y --> entre el comentario que se desea realizar. Los comentarios son ignorados por el navegador y son invisibles para el usuario. Su propósito es permitir comentar el
+                                    código para aclarar su funcionamiento, explicar el codigo que se esta escribiendo.
+                                 </p>
+                              </div>
+                           </div>
+                        </li>
+            
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--/linea de tiempo-->
+
+            <div class="font-sans">
+               <h1 id='section7' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Elementos de bloque y elementos en línea </h1>
+               <hr class="border-b border-gray-400">
+            </div>
+            <p class="py-6">
+               Hay dos categorías de elementos en HTML, que es importante que conozcas. Estos son los elementos de bloque y los
+               elementos en línea.
+            </p>
+
+            <p class="py-2">
+               Los <strong>elementos de bloque</strong> forman un bloque visible en la página; aparecerán en una línea nueva después de cualquier
+               contenido anterior; y cualquier contenido que vaya después también aparecerá en una línea nueva. Los elementos de bloque
+               tienden a ser elementos estructurales en la página que representan, por ejemplo, párrafos, listas, menús de navegación,
+               pies de página, etc. Un elemento de bloque no estaría anidado dentro de un elemento en línea, pero podría estar anidado
+               dentro de otro elemento de nivel de bloque.
+            </p>
+
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <div class="bg-gray-200 p-4">
+                     <span class="block text-gray-700 text-center bg-gray-400 px-4 py-2">Soy bloque 1 y ocupo todo el ancho disponible</span>
+                     <span class="block text-gray-700 text-center bg-gray-400 px-4 py-2 mt-2">Soy bloque 2 y ocupo todo el ancho disponible</span>
+                     <span class="block text-gray-700 text-center bg-gray-400 px-4 py-2 mt-2">Soy bloque 3 y ocupo todo el ancho disponible</span>
+                  </div>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/block.svg" alt="">
+               </div>
+            </div>
+
+            <p class="py-1">
+               El elemento que se muestra en la página anterior es un párrafo. Los párrafos son elementos de bloque y por ese motivo su caja
+               empieza en una nueva línea y llega hasta el final de esa misma línea. Aunque los contenidos de texto del párrafo no son
+               suficientes para ocupar toda la línea, el navegador reserva todo el espacio disponible en la primera línea.
+            </p>
+
+            <p>Los elementos de bloque definidos por HTML son: <code>address</code>, <code>blockquote</code>, <code>center</code>,
+               <code>dir</code>, <code>div</code>, <code>dl</code>, <code>fieldset</code>, <code>form</code>, <code>h1</code>,
+               <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>hr</code>,
+               <code>isindex</code>, <code>menu</code>, <code>noframes</code>, <code>noscript</code>, <code>ol</code>,
+               <code>p</code>, <code>pre</code>, <code>table</code>, <code>ul</code>, <code>dd</code>, <code>dt</code>,
+               <code>frameset</code>, <code>li</code>, <code>tbody</code>, <code>td</code>, <code>tfoot</code>, <code>th</code>,
+               <code>thead</code>, <code>tr</code>.</p>
+            </p>
+
+            <p class="py-6">
+               Los  <strong>elementos en línea</strong> son aquellos que ocupado el espacion necesario del contenidos, dentro de elementos de bloque y delimitan solo pequeñas partes
+               del contenido del documento, no párrafos enteros ni agrupaciones de contenido. Un elemento en línea no hará aparecer una
+               línea nueva en el documento; normalmente aparecen dentro de un párrafo o texto, por ejemplo es el caso de un elemento
+               &lt;a&gt; (hipervínculo) o elementos de énfasis como &lt;em&gt; o &lt;strong&gt;.
+            </p>
+            
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " style="">
+                  <div class="bg-gray-200">
+                     <div class="inline-block text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">Elemento 1</div>
+                     <div class="inline-block text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">Elemento 2</div>
+                     <div class="inline-block text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">Elemento 3</div>
+                  </div>
+               </div>
+               <div v-img class="rounded-b-lg bg-gray-800">
+                  <img class="rounded-lg w-full object-cover" src="imgh/linea.svg" alt="">
+               </div>
+            </div>
+
+            <p class="py-1">
+               El elemento que muestra en la página es un span. Los span son elementos en línea, por lo que su caja sólo ocupa el
+               espacio necesario para mostrar sus contenidos. Si después de este elemento se incluye otro elemento en línea (por
+               ejemplo otro span, enlace o una imagen) el navegador mostraría los dos elementos en la misma línea, ya que existe espacio
+               suficiente.
+            </p>
+
+            <p class="py-1">Los elementos en línea definidos por HTML son: <code>a</code>, <code>abbr</code>, <code>acronym</code>,
+               <code>b</code>, <code>basefont</code>, <code>bdo</code>, <code>big</code>, <code>br</code>, <code>cite</code>,
+               <code>code</code>, <code>dfn</code>, <code>em</code>, <code>font</code>, <code>i</code>, <code>img</code>,
+               <code>input</code>, <code>kbd</code>, <code>label</code>, <code>q</code>, <code>s</code>, <code>samp</code>,
+               <code>select</code>, <code>small</code>, <code>span</code>, <code>strike</code>, <code>strong</code>,
+               <code>sub</code>, <code>sup</code>, <code>textarea</code>, <code>tt</code>, <code>u</code>, <code>var</code>.</p>
+            
+            
+            
+
+
+            
+
+            <div class="font-sans">
+               <h2 id='section8' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Actividad #1 HTML5:  </h2>
+            
+            </div>
+            <p class="py-2">
+               Construir un videos de forma grupal para dar una respuesta amplia a los temas asignados.
+               
+               Cada grupo debe ponerse de acuerdo para buscar la estrategia del desarrollo de esta actividad.
+               Todos los integrantes del grupo deben aparecer en el vídeo participando.
+               Una sola personas se encargará de editar el vídeo y subir a Youtube y de enviar el enlace a classroom.
+            </p>
+            <div class="container">
+               <img src="imgh/actividad_1.svg" alt="">
+            </div>
+         
+            <!--/ Post Content-->
+
+            <!-- util -->
+            
+            <div class="py-6 flex items-center">
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-orange-100 hover:text-green-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"/>
+               </svg>
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-orange-100 hover:text-red-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z"/>
+               </svg>
+               <div class="pl-4">
+                  <p class="text-gray-800 font-bold">Te ha resultado util esta guia de aprendizaje ?</p>
+                  <p class="text-xs text-gray-600 pt-2">Que tal el contenido?</p>
+               </div>
+            </div>
+            <!-- fin util -->
+         </div>
+         <!--secciones fin-->
+
+         <!--enlace arriba -->
+         
+      </div>
+      <div class="w-full lg:w-4/5 lg:ml-auto text-base md:text-sm text-gray-500 px-4 py-6">
+         <span class="text-base text-orange-500 font-bold">&lt;</span> <a href="#"
+            class="text-base md:text-sm text-orange-500 font-bold no-underline hover:underline">Arriba</a>
+      </div>
+      <!--main container fin-->
+
+      <!--footer inicio-->
+      <footer id='section9' class="bg-white border-t border-gray-400 shadow">
+         <div class="container mx-auto flex py-8">
+            <div class="w-full mx-auto flex flex-wrap">
+               <div class="flex w-full lg:w-1/2 ">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Nota Importante</h3>
+                     <p class="py-4 text-gray-600 text-sm">
+                        Has llegado al final de esta guia virtual de aprendizaje. Espero que hayas disfrutado del recorrido por los conceptos básicos del HTML. En este
+                        punto ya deberías entender el lenguaje, cómo funciona en un nivel básico y deberías poder escribir algunos elementos y
+                        atributos. En las siguiente guias virtuales ampliaremos con más detalle algunas de las cosas que ya hemos visto e
+                        introduciremos algunas características nuevas del lenguaje.
+                     </p>
+                     
+                  </div>
+               </div>
+               <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Creditos</h3>
+                     <ul class="list-reset items-center text-sm pt-3">
+                        <li>
+                           <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1" href="#">© 2020 by @eliseovega</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!--footer fin -->
+      <script>
+         /*Toggle dropdown list*/
+         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+         
+         var navMenuDiv = document.getElementById("nav-content");
+         var navMenu = document.getElementById("nav-toggle");
+         
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e){
+           var target = (e && e.target) || (event && event.srcElement);
+         
+          
+           //Nav Menu
+           if (!checkParent(target, navMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, navMenu)) {
+         	  // click on the link
+         	  if (navMenuDiv.classList.contains("hidden")) {
+         		navMenuDiv.classList.remove("hidden");
+         	  } else {navMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  navMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+           //Help Menu
+           if (!checkParent(target, helpMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, helpMenu)) {
+         	  // click on the link
+         	  if (helpMenuDiv.classList.contains("hidden")) {
+         		helpMenuDiv.classList.remove("hidden");
+         	  } else {helpMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  helpMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+         	if( t == elm ) {return true;}
+         	t = t.parentNode;
+           }
+           return false;
+         }
+         
+         
+      </script>
+      <!----------------------------------------------------------->
+      <!--Prism Js-->
+      <script src="js/prism.js"></script>
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+      <!-- Scroll Spy -->
+      <script>
+         /* http://jsfiddle.net/LwLBx/ */
+
+         // Cache selectors
+         var lastId,
+            topMenu = $("#menu-content"),
+            topMenuHeight = topMenu.outerHeight() + 25,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+               var item = $($(this).attr("href"));
+               if (item.length) { return item; }
+            });
+
+         // Bind click handler to menu items
+         // so we can get a fancy scroll animation
+         menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+               offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+            $('html, body').stop().animate({
+               scrollTop: offsetTop
+            }, 300);
+            if (!helpMenuDiv.classList.contains("hidden")) {
+               helpMenuDiv.classList.add("hidden");
+            }
+            e.preventDefault();
+         });
+
+         // Bind to scroll
+         $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+               if ($(this).offset().top < fromTop)
+                  return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+               lastId = id;
+               // Set/remove active class
+               menuItems
+                  .parent().removeClass("font-bold border-orange-500")
+                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-orange-500");
+            }
+         });
+
+      </script>
+
+   </body>
+</html>
