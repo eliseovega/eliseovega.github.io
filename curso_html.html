@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Guia de HTML</title>
+      <title>Guia de Fundamentos HTML</title>
       <meta name="description" content="">
       <meta name="keywords" content="">
       
@@ -18,7 +18,7 @@
       <!--Font Google-->
       <style>
          @import url('https://fonts.googleapis.com/css?family=Lato');
-         html { font-family: 'Lato', sans-serif; }
+         html { font-family: 'Roboto', sans-serif; }
       </style>
       <!--<link rel="stylesheet" href="css/app.css">-->
    </head>
@@ -29,7 +29,7 @@
             <div class="pl-4 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="221.807 89.47 440 621.061" enable-background="new 221.807 89.47 440 621.061"><filter id="a" width="150%" height="150%" x="-5%" y="-5%"><feFlood flood-color="#000" result="floodFill" flood-opacity=".5"/><feComposite in="floodFill" in2="SourceAlpha" operator="in" result="coloredAlpha"/><feGaussianBlur in="coloredAlpha" result="blur" stdDeviation="8"/><feComposite in="blur" in2="SourceGraphic" operator="out" result="maskedOffsetBlur"/><feMerge><feMergeNode in="maskedOffsetBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><g filter="url(#a)"><path fill="#e44d26" d="M261.849 660.647l-40.042-449.125h440l-40.086 449.054-180.184 49.954z"/><path fill="#f16529" d="M441.807 672.348l145.596-40.367 34.258-383.735H441.807z"/><path fill="#ebebeb" d="M441.807 414.82h-72.888l-5.035-56.406h77.923V303.33H303.683l1.32 14.778 13.538 151.794h123.266zM441.807 557.876l-.242.066-61.346-16.566-3.922-43.93h-55.294l7.718 86.489 112.834 31.323.252-.071z"/><path d="M262.745 89.47h27.992v27.656h25.606V89.47h27.993v83.75h-27.993v-28.044h-25.606v28.044h-27.99l-.002-83.75zM381.149 117.244h-24.642V89.47H433.8v27.774h-24.654v55.976H381.15v-55.976h-.001zM446.065 89.47h29.19l17.955 29.428 17.938-29.428h29.2v83.75h-27.882v-41.512l-19.259 29.778h-.481l-19.272-29.778v41.512h-27.39V89.47zM554.277 89.47h28v56.068h39.368v27.682h-67.368V89.47z"/><path fill="#fff" d="M441.617 414.82v55.082h67.83l-6.395 71.44-61.435 16.58v57.307l112.924-31.294.826-9.309 12.946-145.014 1.344-14.792h-14.842zM441.617 303.33v55.084H574.67l1.103-12.382 2.51-27.924 1.318-14.778z"/></g></svg>
                <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
-               HTML: FUNDAMENTOS 
+               HTML5
                </a>
             </div>
             <div class="block lg:hidden pr-4">
@@ -101,7 +101,7 @@
                </p>
                <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">Curso de Fundamentos de HTML</h2>
                <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">
-                  Bienvenidos estimados aprendices al curso de HTML Básico, en este curso aprenderán los fundamentos de este lenguaje de marcado llamado HTML, el cual se utiliza para crear paginas web, sitios web y aplicaciones web , asi que asi no te preocupes estas en el lugar correcto para aprender desde lo mas básico y fundamental para crear paginas web. 
+                  Bienvenidos estimados aprendices al curso de Fundamentos de HTML5, en este curso aprenderán los fundamentos de este lenguaje de marcado llamado HTML, el cual se utiliza para crear paginas web, sitios web y aplicaciones web , asi que asi no te preocupes estas en el lugar correcto para aprender desde lo mas básico y fundamental para crear paginas web. 
                </p>
                <div class="mt-6 flex">
                  <a href="#" target="_blank" class="inline-flex items-start text-lg leading-6 font-medium text-orange-500 hover:text-orange-300 transition ease-in-out duration-150">
@@ -136,7 +136,7 @@
                      </svg>
                    </div>
                  </a>
-                 <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                 <a href="etiquetas_enlaces.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>
                    Etiquetas para Enlaces
                    <div class="ml-auto mt-0.5 pl-4">
