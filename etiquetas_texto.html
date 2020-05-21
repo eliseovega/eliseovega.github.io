@@ -7,7 +7,7 @@
       <title>Guia de Texto en HTML</title>
       <meta name="description" content="">
       <meta name="keywords" content="">
-      
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <!-- Font Awesome Iconos  -->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
       <!--Frameword tailwindcss modo CDN-->
@@ -144,7 +144,7 @@
                      </svg>
                    </div>
                  </a>
-                 <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                 <a href="etiquetas_listas.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
                   
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="list" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>
                   Etiquetas para Listas
@@ -521,6 +521,10 @@
             </div>
          
             <!--/ Post Content-->
+             <!--Boton de ir hacia arriba-->
+             <div id="button-up" class="transition duration-500 ease-in-out fixed bg-gray-900 rounded-full h-12 w-12 flex items-center justify-center right-0 bottom-0 cursor-pointer hover:bg-orange-500 transform hover:-translate-y-1 hover:-translate-x-1 hover:scale-100" >
+               <i class="fas fa-chevron-up text-white font-bold"></i>
+            </div>
 
             <!-- util -->
             
@@ -543,14 +547,11 @@
          <!--enlace arriba -->
          
       </div>
-      <div class="w-full lg:w-4/5 lg:ml-auto text-base md:text-sm text-gray-500 px-4 py-6">
-         <span class="text-base text-orange-500 font-bold">&lt;</span> <a href="#"
-            class="text-base md:text-sm text-orange-500 font-bold no-underline hover:underline">Arriba</a>
-      </div>
+      
       <!--main container fin-->
 
       <!--footer inicio-->
-      <footer id='section5' class="bg-white border-t border-gray-400 shadow">
+      <footer id='section5' class="mt-10 bg-white border-t border-gray-400 shadow">
          <div class="container mx-auto flex py-8">
             <div class="w-full mx-auto flex flex-wrap">
                <div class="flex w-full lg:w-1/2 ">
@@ -638,6 +639,8 @@
       <!----------------------------------------------------------->
       <!--Prism Js-->
       <script src="js/prism.js"></script>
+      <script src="js/bottom_up.js"></script>
+
 
       <!-- jQuery -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
