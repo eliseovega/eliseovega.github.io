@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Guía de Formularios en HTML</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <!-- Font Awesome Iconos  -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <!--Frameword tailwindcss modo CDN-->
+      <link href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.css" rel="stylesheet">
+      <!--Libreria PrismJs modo CDN-->
+      <link rel="stylesheet" href="css/prism.css">
+      
+
+      <!--Font Google-->
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Roboto', sans-serif; }
+      </style>
+      <!--<link rel="stylesheet" href="css/app.css">-->
+   </head>
+   <body class="bg-gray-100 tracking-wider tracking-normal">
+      <!--header inicio-->
+      <nav id="header" class="fixed w-full z-10 top-0 bg-white border-b border-gray-400">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="221.807 89.47 440 621.061" enable-background="new 221.807 89.47 440 621.061"><filter id="a" width="150%" height="150%" x="-5%" y="-5%"><feFlood flood-color="#000" result="floodFill" flood-opacity=".5"/><feComposite in="floodFill" in2="SourceAlpha" operator="in" result="coloredAlpha"/><feGaussianBlur in="coloredAlpha" result="blur" stdDeviation="8"/><feComposite in="blur" in2="SourceGraphic" operator="out" result="maskedOffsetBlur"/><feMerge><feMergeNode in="maskedOffsetBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><g filter="url(#a)"><path fill="#e44d26" d="M261.849 660.647l-40.042-449.125h440l-40.086 449.054-180.184 49.954z"/><path fill="#f16529" d="M441.807 672.348l145.596-40.367 34.258-383.735H441.807z"/><path fill="#ebebeb" d="M441.807 414.82h-72.888l-5.035-56.406h77.923V303.33H303.683l1.32 14.778 13.538 151.794h123.266zM441.807 557.876l-.242.066-61.346-16.566-3.922-43.93h-55.294l7.718 86.489 112.834 31.323.252-.071z"/><path d="M262.745 89.47h27.992v27.656h25.606V89.47h27.993v83.75h-27.993v-28.044h-25.606v28.044h-27.99l-.002-83.75zM381.149 117.244h-24.642V89.47H433.8v27.774h-24.654v55.976H381.15v-55.976h-.001zM446.065 89.47h29.19l17.955 29.428 17.938-29.428h29.2v83.75h-27.882v-41.512l-19.259 29.778h-.481l-19.272-29.778v41.512h-27.39V89.47zM554.277 89.47h28v56.068h39.368v27.682h-67.368V89.47z"/><path fill="#fff" d="M441.617 414.82v55.082h67.83l-6.395 71.44-61.435 16.58v57.307l112.924-31.294.826-9.309 12.946-145.014 1.344-14.792h-14.842zM441.617 303.33v55.084H574.67l1.103-12.382 2.51-27.924 1.318-14.778z"/></g></svg>
+               <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
+               HTML5
+               </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-orange-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <title>Menu</title>
+                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+               <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+                  <div class="relative pull-right pl-4 pr-4 md:pr-0">
+                     <input type="search" placeholder="Buscar" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-orange-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                     <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                        <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+               <ul class="list-reset lg:flex justify-end items-center">
+                  
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://github.com/eliseovega/PseInt" data-tippy-content="@github_eliseovega">
+                        <svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>GitHub</title>
+                           <path
+                              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.youtube.com/channel/UCFYXmYlRbH8FRfhm9LIliNQ" data-tippy-content="@desarrollapp"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 24 24">
+                           <title>YouTube</title>
+                           <path
+                              d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                        </svg></a>
+
+                     
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.facebook.com/groups/485696102126068" data-tippy-content="@facebook_ADSI"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-orange-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>Facebook</title>
+                           <path
+                              d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
+                        </svg></a>
+                  
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!--header fin-->
+
+      <!--inicio del super menu-->
+      <div class="bg-gray-900 pt-6">
+         <div class="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+           <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+             <div>
+               <p class="text-base leading-6 font-semibold text-orange-500 uppercase tracking-wider">
+                 Formación para el Trabajo
+               </p>
+               <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">Etiquetas para Formularios</h2>
+               <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">
+                  Bienvenidos estimados aprendices al curso de Fundamentos de HTML5, En esta guía virtual aprenderemos a crear formularios en html correctamente, conoceremos las etiquetas que definen su estructura de control, campos y además los atributos relacionados con los formularios.</p>
+               <div class="mt-6 flex">
+                 <a href="#" target="_blank" class="inline-flex items-start text-lg leading-6 font-medium text-orange-500 hover:text-orange-300 transition ease-in-out duration-150">
+                   <svg class="flex-shrink-0 mr-3 h-9 w-9 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                     <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                     <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                   </svg>
+                   <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">Tematica</span>
+                   <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Requisitos: Un Navegador y un editor de codigo</span>
+                 </a>
+               </div>
+             </div>
+             <div class="mt-8 lg:mt-0">
+               <div class="max-w-lg lg:ml-auto lg:max-w-xl">
+                 <a href="curso_html.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                   <svg class="mt-0.5 mr-4 h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                   </svg>
+                   Generalidades
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                 <a href="etiquetas_texto.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"></path></svg>
+                   Etiquetas para Texto
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                 
+                 <a href="etiquetas_enlaces.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="list" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>
+                  Etiquetas para Enlaces 
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="etiquetas_listas.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="image" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 336H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h404a6 6 0 0 1 6 6v276a6 6 0 0 1-6 6zM128 152c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zM96 352h320v-80l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L192 304l-39.515-39.515c-4.686-4.686-12.284-4.686-16.971 0L96 304v48z"></path></svg>
+                  Etiquetas para Listas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="etiquetas_imagenes.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg>
+                  Etiquetas para Imágenes 
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                
+                <a href="etiquetas_tabla.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="wpforms" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 75.2v361.7c0 24.3-19 43.2-43.2 43.2H43.2C19.3 480 0 461.4 0 436.8V75.2C0 51.1 18.8 32 43.2 32h361.7c24 0 43.1 18.8 43.1 43.2zm-37.3 361.6V75.2c0-3-2.6-5.8-5.8-5.8h-9.3L285.3 144 224 94.1 162.8 144 52.5 69.3h-9.3c-3.2 0-5.8 2.8-5.8 5.8v361.7c0 3 2.6 5.8 5.8 5.8h361.7c3.2.1 5.8-2.7 5.8-5.8zM150.2 186v37H76.7v-37h73.5zm0 74.4v37.3H76.7v-37.3h73.5zm11.1-147.3l54-43.7H96.8l64.5 43.7zm210 72.9v37h-196v-37h196zm0 74.4v37.3h-196v-37.3h196zm-84.6-147.3l64.5-43.7H232.8l53.9 43.7zM371.3 335v37.3h-99.4V335h99.4z"></path></svg>
+                  Etiquetas para Tablas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-orange-500 px-5 py-4 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150"   >
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="mr-3 h-6 w-6 text-orange-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>
+                  Etiquetas para Formularios
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-orange-500"  viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                  </svg>
+                  Estructura Semantica
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+      <!--fin del super menu-->
+
+
+      <!--main container inicio-->
+      <div class="container w-full flex flex-wrap mx-auto px-2 pt-4 lg:pt-16 mt-16">
+
+         <!--menu inicio-->
+         <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+            <p class="text-base font-bold py-2 lg:pb-6 text-gray-700"></p>
+            <div class="block lg:hidden sticky inset-0">
+               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-orange-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+               <ul class="list-reset">
+
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent">
+                     <a href='#section1'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:border-orange-500 lg:hover:border-orange-500">
+                        <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Formulario</span>
+                     </a>
+                  </li>
+                  
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent   ">
+              
+                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">2. Etiquetas</span>
+                     </a>
+                  </li>
+                  
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">3. Tipo de Campos </span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section4' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">4. Botones</span>
+                     </a>
+                  </li>
+                  
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#ejemplo' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">Ejemplo practico</span>
+                     </a>
+                  </li>
+                  
+                 
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#actividades' class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">Actividades</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-orange-100 lg:hover:bg-transparent ">
+                     <a href='#section6'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-orange-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                        <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
+                     </a>
+                  </li>
+                  
+               </ul>
+            </div>
+         </div>
+         <!--menu fin-->
+
+         <!--secciones inicio-->
+         <div class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
+            <!--Titulo-->
+            <div class="font-sans">
+               <button class="bg-gray-200 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                  <svg class="h-5 pr-3 fill-current text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                     <path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z" /></svg>
+                  <a href="./index.html" class="text-base md:text-sm text-gray-700 font-bold no-underline hover:no-underline"><span>
+                        Inicio</span></a>
+               </button>
+               <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">1. Formularios en HTML </h1>
+
+               <p class="py-6">
+                  Los formularios web son uno de los principales puntos de interacción entre un usuario y un sitio web o aplicación. Los formularios permiten a los usuarios la introducción de datos, que generalmente se envían a un servidor web para su procesamiento y almacenamiento.
+               </p>
+
+               <div class="relative overflow-hidden mb-8">
+                  <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+                     <div class="">
+                        <img class="object-contain" src="imgh/app_form.svg" alt="app form ">
+                      </div>
+                  </div>
+                  
+               
+            </div>
+            <p class="py-3">
+               Dentro de los campos que podemos incluir en formularios HTML encontramos los siguientes:
+            </p>
+             <!--codinig-->
+             <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-lg overflow-hidden border-t border border-gray-400 p-4 " >
+                  <ul class="list-disc list-inside">
+                     <li>Campos de textos</li> 
+                     <li>Contraseñas</li> 
+                     <li>Checkbox</li>
+                     <li>Radios</li> 
+                     <li>Botones de envío</li> 
+                     <li>Botones de borrado</li>
+                     <li>Ficheros</li> 
+                     <li>Campos Ocultos</li> 
+                     <li>Combos de selección</li>
+                  </ul>
+               </div>
+             </div>
+             
+            <!--/codinig-->
+
+
+            <!--Fin Titulo-->
+            <!--Lead Para-->
+            <h1 id='section2' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">2. Etiquetas para Formularios </h1>
+
+            <p class="py-3">
+               Veamoslas etiquetas básicas para crear un formulario de la forma más completa posible:     
+            </p>
+
+            <div class="mb-6 border-t border-b border-gray-300 overflow-hidden relative">
+               <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray scrolling-touch">
+                 <table class="w-full text-left table-collapse">
+                   <thead>
+                     <tr>
+                       <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Etiqueta</th> 
+                       <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Descripción</th>
+                       <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Tipo</th>
+                     </tr>
+                   </thead> 
+                   <tbody class="align-baseline">
+                     <tr>
+                       <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;form&gt;</td>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Etiqueta <strong>contenedora</strong> que define un formulario</td>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Bloque</td>
+                     </tr> 
+                     <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;label&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Indica la descripción de un campo</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;input&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Define un campo de entrada, acompañado con el atributo type=""</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;select&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Define una lista desplegable</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;option&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Define una opción de la lista desplegable</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;textarea&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Define un campo de varios lineas de texto</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;buttom&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Define un boton con una funcion propia</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;fieldset&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Permite agrupar los campos de un formulario</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Bloque</td>
+                      </tr> 
+                      <tr>
+                        <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">&lt;legend&gt;</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">Crea un titulo para un grupo de campos</td>
+                         <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">linea</td>
+                      </tr> 
+                      
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+             
+            <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">3. Tipo de Campos en el Formularios</h1>
+            <p class="py-3">
+               El atributo <b>type=""</b> va dentro de la etiqueta <b>&lt;input&gt;</b> y su valor indicará que tipo de campo se está creando. 
+            </p>
+            <p class="py-3">Veamos algunos valores que puede tomar el atributo type en un formulario HTML: </p>
+
+            <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Text</h2>
+            <p class="py-3">Campo para ingresar un texto corto  </p>
+            <!--code-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                 <div class="max-w-sm mx-auto">
+                   <p class="text-sm mb-2 text-gray-600">Nombre</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Escriba su Nombre">
+                  </div>
+               </div>
+               <div v-pre class="rounded-b-lg bg-gray-800">
+                 <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Nombre&lt;/label&gt; &lt;!--descripción del campo--&gt;
+&lt;input type="text" placeholder="Escriba su Nombre"&gt; &lt;!--crea un campo de texto corto--&gt;</code></pre>
+               </div>
+             </div>
+             <!--/code-->
+
+             <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Email</h2>
+             <p class="py-3">Campo para ingresar una dirección de correo electronico validado  </p>
+            <!--code-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                 <div class="max-w-sm mx-auto">
+                   <p class="text-sm mb-2 text-gray-600">Email</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="email" placeholder="nombre@empresa.com">
+                  </div>
+               </div>
+               <div v-pre class="rounded-b-lg bg-gray-800">
+                 <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Email&lt;/label&gt;
+&lt;input type="email" placeholder="nombre@empresa.com"&gt;</code></pre>
+               </div>
+             </div>
+             <!--/code-->
+             <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Password</h2>
+             <p class="py-3">Campo para ingresar una contraseña, cuyo valor permanece oculto. Se puede usar el atributo maxlength para especificar la longitud máxima del valor que se puede introducir </p>
+             <!--code-->
+             <div class="relative overflow-hidden mb-8">
+                <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                  <div class="max-w-sm mx-auto">
+                    <p class="text-sm mb-2 text-gray-600">Contraseña</p>
+                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="password" placeholder="**********">
+                   </div>
+                </div>
+                <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Contraseña&lt;/label&gt;
+&lt;input type="password" placeholder="*********"&gt;</code></pre>
+                </div>
+              </div>
+              <!--/code-->
+
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Number</h2>
+              <p class="py-3">Campo para ingresar solo números </p>
+              <!--code-->
+              <div class="relative overflow-hidden mb-8">
+                 <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                   <div class="max-w-sm mx-auto">
+                     <p class="text-sm mb-2 text-gray-600">N° de Identificación</p>
+                     <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="number" placeholder="Números sin espacios">
+                    </div>
+                 </div>
+                 <div v-pre class="rounded-b-lg bg-gray-800">
+                   <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;N° de Identificación&lt;/label&gt;
+&lt;input type="number" placeholder="Números sin espacios"&gt;</code></pre>
+                 </div>
+               </div>
+               <!--/code-->
+
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Tel</h2>
+              <p class="py-3">Campo para ingresar un número de telefono  </p>
+              <!--code-->
+              <div class="relative overflow-hidden mb-8">
+                 <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                   <div class="max-w-sm mx-auto">
+                     <p class="text-sm mb-2 text-gray-600">N° de Telefono</p>
+                     <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="tel" placeholder="Números sin espacios">
+                    </div>
+                 </div>
+                 <div v-pre class="rounded-b-lg bg-gray-800">
+                   <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;N° de Telefono&lt;/label&gt;
+&lt;input type="tel" placeholder="Números sin espacios"&gt;</code></pre>
+                 </div>
+               </div>
+               <!--/code-->
+
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Date</h2>
+               <p class="py-3">Campo para ingresar una fecha dia/mes/año ó viceversa </p>
+               <!--code-->
+               <div class="relative overflow-hidden mb-8">
+                  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                    <div class="max-w-sm mx-auto">
+                      <p class="text-sm mb-2 text-gray-600">Fecha de Nacimiento</p>
+                      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="date" placeholder="dd/mm/aaaa">
+                     </div>
+                  </div>
+                  <div v-pre class="rounded-b-lg bg-gray-800">
+                    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Fecha de Nacimiento&lt;/label&gt;
+&lt;input type="date" placeholder="dd/mm/aaaa"&gt;</code></pre>
+                  </div>
+                </div>
+                <!--/code-->
+ 
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Radio </h2>
+              <p class="py-3">Campo de selección con unica respuesta, Se debe usar el atributo value para definir el valor que se enviará por este elemento  </p>
+              <!--code-->
+              <div class="relative overflow-hidden mb-8">
+                 <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                   <div class="max-w-sm mx-auto">
+                     <p class="text-sm mb-2 text-gray-600">Sexo</p>
+                     
+                     <input type="radio" class="form-radio" name="accountType" value="M">
+                     <span class="ml-2 text-sm mb-2 text-gray-600">Masculino</span>
+                       
+                        
+                     <input type="radio" class="form-radio" name="accountType" value="F">
+                     <span class="ml-2 text-sm mb-2 text-gray-600">Femenino</span>
+                        
+                     </div>
+                 </div>
+                 <div v-pre class="rounded-b-lg bg-gray-800">
+                   <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Sexo&lt;/label&gt;
+&lt;input type="radio" value="M"&gt; &lt;span&gt;Masculino &lt;/span&gt;
+&lt;input type="radio" value="F"&gt; &lt;span&gt;Femenino &lt;/span&gt;</code></pre>
+                 </div>
+               </div>
+               <!--/code-->
+
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Select </h2>
+               <p class="py-3">Campo de lista de selección y en ella solo se selecciona una opcion, Se debe usar el atributo value para definir el valor que se enviará por este elemento </p>
+               <!--code-->
+               <div class="relative overflow-hidden mb-8">
+                  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                    <div class="max-w-sm mx-auto">
+                        <p class="text-sm mb-2 text-gray-600">Estado</p>
+                        <div class="relative">
+                          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                            <option>-Seleccione-</option>
+                            <option>Casado</option>
+                            <option>Soltero</option>
+                            <option>Unión Libre</option>
+                            <option>Separado</option>
+                            <option>Viudo</option>
+                          </select>
+                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                          </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div v-pre class="rounded-b-lg bg-gray-800">
+                    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Estado Civil&lt;/label&gt;
+&lt;select name="estado_civil" id=""&gt; 
+   &lt;option value="0"&gt;-Seleccione- &lt;/option&gt;
+   &lt;option value="1"&gt;Casado &lt;/option&gt;
+   &lt;option value="2"&gt;Soltero &lt;/option&gt;
+   &lt;option value="3"&gt;Unión Libre &lt;/option&gt;
+   &lt;option value="4"&gt;Separado&lt;/option&gt;
+   &lt;option value="5"&gt;Viudo&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                  </div>
+                </div>
+                <!--/code-->
+
+                <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Select multiple </h2>
+                <p class="py-3">Campo de lista de selección en cual se puede seleccion varias opciones, Se debe usar el atributo value para definir el valor que se enviará por este elemento </p>
+                <!--code-->
+                <div class="relative overflow-hidden mb-8">
+                   <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                     <div class="max-w-sm mx-auto">
+                         <p class="text-sm mb-2 text-gray-600">Formación</p>
+                         <div class="relative">
+                           <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 overflow-auto h-24" id="grid-state" multiple>
+                              <option>Complementario</option>
+                              <option>Técnico</option>
+                              <option>Técnologo</option>
+                              <option>Especialización</option>
+                           </select>
+                         </div> 
+                     </div>
+                   </div>
+                   <div v-pre class="rounded-b-lg bg-gray-800">
+                     <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Formación&lt;/label&gt;
+ &lt;select name="formación" id="" multiple&gt; 
+    &lt;option value="1"&gt;Complementario &lt;/option&gt;
+    &lt;option value="2"&gt;Técnico &lt;/option&gt;
+    &lt;option value="3"&gt;Técnologo &lt;/option&gt;
+    &lt;option value="4"&gt;Especialización&lt;/option&gt;
+ &lt;/select&gt;</code></pre>
+                   </div>
+                 </div>
+                 <!--/code-->
+
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Checkbox </h2>
+               <p class="py-3">Casilla de selección con multiples opciones, Se debe usar el atributo value para definir el valor que se enviará por este elemento </p>
+              <!--code-->
+              <div class="relative overflow-hidden mb-8">
+                 <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                  <div class="md:flex md:items-center mb-6">
+                     <p class="text-sm mb-2 text-gray-600">Formación</p>
+                     <div class="md:w-1/6"></div>
+                     <label class="md:w-1/6 block text-gray-600 ">
+                       <input class="mr-2 leading-tight " type="checkbox">
+                       <span class="text-sm">
+                         Técnico
+                       </span>
+                     </label>
+                     <label class="md:w-1/6 block text-gray-600 ">
+                        <input class="mr-2 leading-tight " type="checkbox">
+                        <span class="text-sm">
+                          Técnologo
+                        </span>
+                      </label>
+                      <label class="md:w-1/6 block text-gray-600 ">
+                        <input class="mr-2 leading-tight " type="checkbox">
+                        <span class="text-sm">
+                          Especialización
+                        </span>
+                      </label>
+                   </div>
+                 </div>
+                 <div v-pre class="rounded-b-lg bg-gray-800">
+                   <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Formación&lt;/label&gt;
+&lt;input type="checkbox" value="Técnico"&gt; &lt;span&gt;Técnico &lt;/span&gt;
+&lt;input type="checkbox" value="Técnologo"&gt; &lt;span&gt;Técnologo &lt;/span&gt;
+&lt;input type="checkbox" value="Especialización"&gt; &lt;span&gt;Especialización &lt;/span&gt;</code></pre>
+                 </div>
+               </div>
+               <!--/code-->
+
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">File</h2>
+               <p class="py-3">Campo que permite al usuario seleccionar un archivo de un dispositivo y subirlo al servidor. </p>
+               <!--code-->
+               <div class="relative overflow-hidden mb-8">
+                  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                    <div class="max-w-sm mx-auto">
+                      <p class="text-sm mb-2 text-gray-600">Archivo</p>
+                      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="file" >
+                     </div>
+                  </div>
+                  <div v-pre class="rounded-b-lg bg-gray-800">
+                    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Foto&lt;/label&gt;
+&lt;input type="file" &gt;</code></pre>
+                  </div>
+                </div>
+                <!--/code-->
+
+                <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Textarea</h2>
+               <!--code-->
+               <div class="relative overflow-hidden mb-8">
+                  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                    <div class="max-w-sm mx-auto">
+                     <label class="block">
+                        <span class="text-gray-600">Comentarios</span>
+                        <textarea class="form-textarea pl-3 pt-3 mt-1 block w-full border border-gray-300 rounded" rows="3" placeholder="Escriba aqui su comentario..."></textarea>
+                      </label>
+                    </div>
+                  </div>
+                  <div v-pre class="rounded-b-lg bg-gray-800">
+                    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;label&gt;Comentarios&lt;/label&gt;
+&lt;textarea rows="3" placeholder="Escriba aqui su comentario..."&gt;&lt;/textarea&gt;</code></pre>
+                  </div>
+                </div>
+                <!--/code-->
+
+              
+            <h1 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">3. Botones de Control </h1>
+            <p class="py-3">
+               Por último, y no por ello menos importante, tenemos los botones de envío de formulario. 
+            </p>
+            <p class="py-3">
+               Tenemos varios tipos de botones que actúan sobre el formulario:
+            </p>
+            <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Botón de envío de formulario</h2>
+            <p class="py-3">El botón &lt;input  type="submit" &gt; sirve para enviar el formulario una vez el usuario ha rellenado todos sus campos y pulsa en este botón </p>
+
+            <!--code-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                 <div class="max-w-sm mx-auto">
+                   <p class="text-sm mb-2 text-gray-600">Nombre</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Escriba su Nombre">
+                   <p class="text-sm mb-2 text-gray-600">Email</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="email" placeholder="nombre@empresa.com">
+                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-3 rounded">
+                     Enviar
+                   </button>
+                  </div>
+               </div>
+               <div v-pre class="rounded-b-lg bg-gray-800">
+                 <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;form action=""&gt;
+   &lt;label&gt;Nombre&lt;/label&gt;
+   &lt;input type="text" placeholder="Escriba su Nombre"&gt;
+   &lt;label&gt;Email&lt;/label&gt;
+   &lt;input type="email" placeholder="nombre@empresa.com"&gt;
+
+   &lt;input type="submit" value="Enviar"&gt; &lt;!--Boton para enviar los datos--&gt;
+&lt;/form&gt;
+</code></pre>
+               </div>
+             </div>
+             <!--/code-->
+
+             <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Botón de borrar formulario</h2>
+             <p class="py-3">El botón &lt;input  type="reset" &gt; borra completamente el formulario y reestablece todos sus campos de entrada de datos a sus valores por defecto iniciales. </p>
+
+             <!--code-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                 <div class="max-w-sm mx-auto">
+                   <p class="text-sm mb-2 text-gray-600">Nombre</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Escriba su Nombre">
+                   <p class="text-sm mb-2 text-gray-600">Email</p>
+                   <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="email" placeholder="nombre@empresa.com">
+                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-3 rounded">
+                     Enviar
+                   </button>
+                   <button class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 ml-3 border border-gray-500 hover:border-transparent rounded">
+                     Cancelar
+                   </button>
+                  </div>
+               </div>
+               <div v-pre class="rounded-b-lg bg-gray-800">
+                 <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;form action=""&gt;
+   &lt;label&gt;Nombre&lt;/label&gt;
+   &lt;input type="text" placeholder="Escriba su Nombre"&gt;
+   &lt;label&gt;Email&lt;/label&gt;
+   &lt;input type="email" placeholder="nombre@empresa.com"&gt;
+
+   &lt;input type="submit" value="Enviar"&gt; 
+   &lt;input type="reset" value="Cancelar"&gt; &lt;!--Boton para borra los datos--&gt;
+&lt;/form&gt;
+</code></pre>
+               </div>
+             </div>
+             <!--/code-->
+
+             <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">Botón sin funcionalidad</h2>
+             <p class="py-3">Por último, tenemos el botón &lt;input  type="button" &gt;  o la etiqueta &lt;button&gt;, que en ambos casos añade un botón sin ninguna funcionalidad por defecto </p>
+             <!--code-->
+             <div class="relative overflow-hidden mb-8">
+                <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 p-8 bg-white">
+                  <div class="max-w-sm mx-auto">
+                    <p class="text-sm mb-2 text-gray-600">Nombre</p>
+                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Escriba su Nombre">
+                    <p class="text-sm mb-2 text-gray-600">Email</p>
+                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="email" placeholder="nombre@empresa.com">
+                    <button onClick="alert('¡Hola, soy button!')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-3 rounded">
+                      Click
+                    </button>
+                    <button class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 ml-3 border border-gray-500 hover:border-transparent rounded">
+                      Cancelar
+                    </button>
+                   </div>
+                </div>
+                <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;form action=""&gt;
+    &lt;label&gt;Nombre&lt;/label&gt;
+    &lt;input type="text" placeholder="Escriba su Nombre"&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" placeholder="nombre@empresa.com"&gt;
+
+    &lt;input  type="button" value="Click" onClick="alert('¡Hola, soy button!')"&gt; &lt;!--Boton sin función especifica--&gt;
+    &lt;input type="reset" value="Enviar"&gt; 
+ &lt;/form&gt;
+ </code></pre>
+                </div>
+              </div>
+              <!--/code-->
+
+             
+
+            <div class="font-sans">
+               <h2 id='ejemplo' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Ejemplo Practico: Formulario de Datos Personales </h2>
+               
+               <p class="py-6" >Utilizaremos un nuevo ejercicio para crear un formulario y le añadimremos los campos mas importantes:</p>
+            </div>
+            <!--Caja de codigo-->
+            <div class="relative overflow-hidden mb-8">
+               <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-4 " >
+                  <img class="h-48 w-48 rounded-full mx-auto" src="imgh/dental_clinic.svg" alt="Logo Dental Clinic" />
+                  <p class="pt-2 text-lg font-semibold">
+                     WebApp para Clinica Dental
+                   </p>
+                   <p class="text-sm text-gray-600">
+                     Desarrollado por ADSI
+                   </p>
+                  <h2 class="py-3 text-xl text-blue-700 ">Información del Paciente</h2> 
+                  <hr>
+               <div class="max-w-md">
+                  <p class="text-sm mb-2 mt-2 text-gray-600">Nombre del Paciente</p>
+                  <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Escriba su Nombre">
+                  <p class="text-sm mb-2 mt-2 text-gray-600">Tipo de Documento</p>
+                  <div class="relative">
+                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                      <option>-Seleccione-</option>
+                      <option>Cedula de Ciudadania</option>
+                      <option>Tarjeta de Identidad</option>
+                      <option>Registro Civil</option>
+                      <option>Cedula de Extranjeria</option>
+                      <option>Passaporte</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div> 
+                  <p class="text-sm mb-2 mt-2 text-gray-600">N° de Documento</p>
+                  <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="number" placeholder="Números sin puntos">
+                  <p class="text-sm mb-2 mt-2text-gray-600">Fecha de Nacimiento</p>
+                  <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="date" placeholder="dd/mm/aaaa">
+                  <p class="text-sm mb-2 mt-2 text-gray-600">Sexo</p>
+                  <input type="radio" class="form-radio" name="accountType" value="M">
+                  <span class="ml-2 text-sm mb-2 text-gray-600">Masculino</span>
+                  <input type="radio" class="form-radio" name="accountType" value="F">
+                  <span class="ml-2 text-sm mb-2 text-gray-600">Femenino</span>
+                  <p class="text-sm mb-2 mt-2 text-gray-600">Correo del Paciente</p>
+                  <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="ejemplo@empresa.com">
+                  <p class="text-sm mb-2 mt-2 text-gray-600">N° de Celular</p>
+                  <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="tel" placeholder="Números sin espacios">
+                  <label class="block mt-2">
+                     <span class="text-gray-600">Observación Medica del Paciente</span>
+                     <textarea class="form-textarea pl-3 pt-3 mt-1 block w-full border border-gray-300 rounded" rows="3" placeholder="Escriba aqui su comentario..."></textarea>
+                   </label>
+                  <div class="inline-block">
+                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-6 rounded">
+                     Enviar
+                     </button>
+                     <button class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 ml-3 border border-gray-500 hover:border-transparent rounded">
+                     Cancelar
+                     </button>
+                  </div>
+               </div>
+
+               
+               
+               
+              
+            </div>
+            <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">      
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+   &lt;title&gt;Clinica Dental&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style="text-align: center; "&gt; &lt;!--la propiedad text-align centra elementos linea--&gt;
+&lt;img height="192px" src="img/dental_clinic.svg" alt="Logo Dental Clinic" &gt;
+&lt;/div&gt;
+&lt;p&gt;WebApp para Clinica Dental&lt;/p&gt;
+&lt;p&gt;Desarrollado por ADSI&lt;/p&gt;
+&lt;h2 style="color: #2b6cb0; " &gt;Información del Paciente&lt;h2&gt; &lt;!--la propiedad color, colorea el texto--&gt;
+&lt;hr&gt;
+
+&lt;form action=""&gt; &lt;!--Creamos el formulario --&gt;
+   &lt;div &gt; &lt;!--la etiqueta div es una etiqueta divisoria de contenido --&gt;
+      &lt;label &gt;Nombre del Paciente&lt;/label&gt;
+      &lt;input type="text" placeholder="Escriba su Nombre"&gt; &lt;!--placeholder crea un texto provisional en un elemento input--&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+   &lt;label &gt;Tipo de documento&lt;/label&gt;
+      &lt;select &gt;
+         &lt;option&gt;-Seleccione-&lt;/option&gt;
+         &lt;option&gt;Cedula de Ciudadania&lt;/option&gt;
+         &lt;option&gt;Tarjeta de Identidad&lt;/option&gt;
+         &lt;option&gt;Registro Civil&lt;/option&gt;
+         &lt;option&gt;Cedula de Extranjeria&lt;/option&gt;
+         &lt;option&gt;Passaporte&lt;/option&gt;
+      &lt;/select&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;label &gt;N° de Documento&lt;/label&gt;
+      &lt;input type="number" placeholder="Números sin puntos"&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;label &gt;Fecha de Nacimiento&lt;/label&gt;
+      &lt;input type="date" placeholder="dd/mm/aaaa"&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+   &lt;label &gt;Sexo&lt;/label&gt;
+      &lt;input type="radio" value="M" &gt;&lt;span&gt;Masculino&lt;/span&gt;
+      &lt;input type="radio" value="F" &gt;&lt;span&gt;Femenino&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;label &gt;Correo del Paciente&lt;/label&gt;
+      &lt;input type="email" placeholder="ejemplo@empresa.com"&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;label &gt;N° de Celular&lt;/label&gt;
+      &lt;input type="tel" placeholder="número sin espacios"&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+      &lt;label &gt;Observación Medica del Paciente&lt;/label&gt;
+      &lt;br&gt;
+      &lt;textarea  rows="3" placeholder="Escriba aqui su comentario..."&gt;&lt;/textarea&gt;
+   &lt;/div&gt;
+
+   &lt;div &gt;
+      &lt;input type="submit" value="Enviar"&gt;
+      &lt;input type="reset" value="Cancelar"&gt;
+   &lt;/div&gt;
+  
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+                </div>
+            </div>
+            
+            <!--/Caja de codigo-->
+
+
+            <div id='actividades' class="font-sans">
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Actividad #9. HTML5: ETIQUETAS PARA FORMULARIOS </h2>
+            
+            </div>
+            <p class="py-2">
+               Ahora que ya sabes insertar formularios en HTML es el momento de que empieces a practicar, aunque no es nada difícil, practica para desarrollar la habilidad en el aprendizaje.
+      
+            </p>
+            <div class="container">
+               <div class="bg-orange-500 text-center py-4 lg:px-4">
+                  <div class="p-2 bg-gray-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                    <a href="Actividad_9_Formularios_HTML5.pdf" target="_blank" ><span class="flex rounded-full bg-orange-600 uppercase px-2 py-1 text-xs font-bold mr-3">Descargar</span></a>
+                    <span class="font-semibold mr-2 text-left flex-auto">Instrucciones: Actividad 9 Formulario en HTML5</span>
+                  </div>
+                </div>
+            </div>
+         
+            <!--/ Post Content-->
+            <!--Boton de ir hacia arriba-->
+            <div id="button-up" class="transition duration-500 ease-in-out fixed bg-gray-900 rounded-full h-12 w-12 flex items-center justify-center right-0 bottom-0 cursor-pointer hover:bg-orange-500 transform hover:-translate-y-1 hover:-translate-x-1 hover:scale-100" >
+               <i class="fas fa-chevron-up text-white font-bold"></i>
+            </div>
+
+
+            <!-- util -->
+            
+            <div class=" py-6 flex items-center">
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-orange-100 hover:text-green-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"/>
+               </svg>
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-orange-100 hover:text-red-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z"/>
+               </svg>
+               <div class="pl-4">
+                  <p class="text-gray-800 font-bold">Te ha resultado util esta guia de aprendizaje ?</p>
+                  <p class="text-xs text-gray-600 pt-2">Que tal el contenido?</p>
+               </div>
+            </div>
+            <!-- fin util -->
+         </div>
+         <!--secciones fin-->
+
+         <!--enlace arriba -->
+         
+      </div>
+     
+      <!--main container fin-->
+
+      <!--footer inicio-->
+      <footer id='section6' class="mt-10 bg-white border-t border-gray-400 shadow">
+         <div class="container mx-auto flex py-8">
+            <div class="w-full mx-auto flex flex-wrap">
+               <div class="flex w-full lg:w-1/2 ">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Nota Importante</h3>
+                     <p class="py-4 text-gray-600 text-sm">
+                        Has llegado al final de esta guia virtual de aprendizaje. Espero que hayas disfrutado del recorrido por los conceptos básicos del HTML. En este
+                        punto ya deberías entender el lenguaje, cómo funciona en un nivel básico y deberías poder escribir algunos elementos y
+                        atributos. En las siguiente guias virtuales ampliaremos con más detalle algunas de las cosas que ya hemos visto e
+                        introduciremos algunas características nuevas del lenguaje.
+                     </p>
+                     
+                  </div>
+               </div>
+               <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Creditos</h3>
+                     <ul class="list-reset items-center text-sm pt-3">
+                        <li>
+                           <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1" href="#">© 2020 by @eliseovega</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!--footer fin -->
+      <script>
+         /*Toggle dropdown list*/
+         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+         
+         var navMenuDiv = document.getElementById("nav-content");
+         var navMenu = document.getElementById("nav-toggle");
+         
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e){
+           var target = (e && e.target) || (event && event.srcElement);
+         
+          
+           //Nav Menu
+           if (!checkParent(target, navMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, navMenu)) {
+         	  // click on the link
+         	  if (navMenuDiv.classList.contains("hidden")) {
+         		navMenuDiv.classList.remove("hidden");
+         	  } else {navMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  navMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+           //Help Menu
+           if (!checkParent(target, helpMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, helpMenu)) {
+         	  // click on the link
+         	  if (helpMenuDiv.classList.contains("hidden")) {
+         		helpMenuDiv.classList.remove("hidden");
+         	  } else {helpMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  helpMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+         	if( t == elm ) {return true;}
+         	t = t.parentNode;
+           }
+           return false;
+         }
+         
+         
+      </script>
+      <!----------------------------------------------------------->
+      <!--Prism Js-->
+      <script src="js/prism.js"></script>
+      <script src="js/bottom_up.js"></script>
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+      <!-- Scroll Spy -->
+      <script>
+         /* http://jsfiddle.net/LwLBx/ */
+
+         // Cache selectors
+         var lastId,
+            topMenu = $("#menu-content"),
+            topMenuHeight = topMenu.outerHeight() + 25,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+               var item = $($(this).attr("href"));
+               if (item.length) { return item; }
+            });
+
+         // Bind click handler to menu items
+         // so we can get a fancy scroll animation
+         menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+               offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+            $('html, body').stop().animate({
+               scrollTop: offsetTop
+            }, 300);
+            if (!helpMenuDiv.classList.contains("hidden")) {
+               helpMenuDiv.classList.add("hidden");
+            }
+            e.preventDefault();
+         });
+
+         // Bind to scroll
+         $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+               if ($(this).offset().top < fromTop)
+                  return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+               lastId = id;
+               // Set/remove active class
+               menuItems
+                  .parent().removeClass("font-bold border-orange-500")
+                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-orange-500");
+            }
+         });
+
+      </script>
+
+   </body>
+</html>
