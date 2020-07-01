@@ -100,7 +100,7 @@
                <p class="text-base leading-6 font-semibold text-blue-500 uppercase tracking-wider">
                  ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN
                </p>
-               <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">MODELO DE CAJA CSS</h2>
+               <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">MODELO DE CAJA</h2>
                <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">Bienvenidos estimados aprendices a la competencia:</p>
                <div class="mt-6 flex">
                   <a href="#"  class="inline-flex items-start text-lg leading-6 font-medium text-blue-500 hover:text-blue-300 transition ease-in-out duration-150">
@@ -130,7 +130,7 @@
                      <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
                    </svg> 
                    <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">Tematica</span>
-                   <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Requisitos: Un Navegador y un editor de codigo</span>
+                   <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Requisitos: Un Navegador y un editor de código</span>
                  </a>
                </div>
              </div>
@@ -308,7 +308,7 @@
                </button>
                <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">1. Que es el Modelo de Caja CSS</h1>
                <p class="py-3">
-                En general podemos decir que todos los elementos HTML están contenidas en cajas rectangulares; es decir, para CSS cada elemento presente en una página HTML está dentro de una caja; de tal manera que elementos como títulos, párrafos, imágenes, listas, videos, iconos, etc. están dentro de una caja rectangular y el conjunto de ellas son elementos que forma una pagina web.
+                En general podemos decir que todos los elementos HTML están contenidas en cajas rectangulares; es decir, para CSS cada elemento presente en una página HTML está dentro de una caja; de tal manera que elementos como títulos, párrafos, imágenes, listas, videos, iconos, etc. están dentro de una caja rectangular y el conjunto de ellas son elementos que forma una página web.
                </p>
                
                <div class="relative overflow-hidden mb-6">
@@ -320,7 +320,7 @@
               </div>
               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">Diagrama del Modelo de Caja CSS</h2>
               <p class="py-3">
-                Cada caja tiene un área de contenido (ejemplo: texto,imagen,cajas descendiente u otros elemento de contenido) y sus areas opcionales: relleno(padding) ,bordes(border) , y márgenes(margin); El tamaño de cada área se especifica mediante las propiedades correspondientes, y puede ser cero (o en el caso de márgenes, negativo). El siguiente diagrama muestra cómo se relacionan estas áreas y la terminología utilizada para referirse a las diversas partes de la caja:
+                Cada caja tiene un área de contenido (ejemplo: texto,imagen,cajas descendiente u otros elemento de contenido) y sus áreas opcionales: relleno(padding) ,bordes(border) , y márgenes(margin); El tamaño de cada área se especifica mediante las propiedades correspondientes, y puede ser cero (o en el caso de márgenes, negativo). El siguiente diagrama muestra cómo se relacionan estas áreas y la terminología utilizada para referirse a las diversas partes de la caja:
               </p>
               <div class="relative overflow-hidden mb-8">
                 <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
@@ -767,7 +767,7 @@
 
             <h1 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">3. Calcular en Ancho y Alto Total de la Caja CSS</h1>
             <p class="py-3">
-              Observe que en los diagramas del modelo de caja el margen está en blanco. El margen es el único que no afecta el tamaño del cuadro en sí mismo, ya que es externo y no se tendra en cuenta en las formulas para calcular ancho y alto total visible.
+              Observe que en los diagramas del modelo de caja el margen está en blanco. El margen es el único que no afecta el tamaño del cuadro en sí mismo, ya que es externo y no se tendrá en cuenta en las fórmulas para calcular ancho y alto total visible.
             </p>
             <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-xl">El tamaño de la caja en sí se calcula así: </h2>
             
@@ -819,7 +819,7 @@
             <div class="font-sans">
                <h2 id='ejemplo' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Ejemplo Practico: Modelo de Caja con Escaleras y Cuadros </h2>
                
-               <p class="py-3" >Utilizaremos un primer ejercicio para crean una pagina web con las siguientes Caracteristicas:</p>
+               <p class="py-3" >Utilizaremos un primer ejercicio para crean una página web con las siguientes Características:</p>
             </div>
             
             <nav class="flex flex-col sm:items-start sm:text-left text-left items-center py-3">
@@ -828,21 +828,28 @@
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
-                </span>3 cajas escalonada 
+                </span>3 cajas escalonada que aumenta su ancho en 16px
               </a>
               <a class="mb-2">
                 <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
-                </span>3 cajas escalonada con margen escalonado
+                </span>3 cajas escalonada con margen escalonado, con mis ancho
               </a>
               <a class="mb-2">
                 <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
                     <path d="M20 6L9 17l-5-5"></path>
                   </svg>
-                </span>3 cajas contendora una dentro de otra 
+                </span>3 cajas contendora una dentro de otra reduciendo en 16px su tamaño
+              </a>
+              <a class="mb-2">
+                <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>2 cajas serparadoras con margenes de 48px entre cada ejercicio
               </a>
                           
             </nav>
