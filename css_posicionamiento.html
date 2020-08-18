@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Guía de CSS: Posicionamiento</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <!-- Font Awesome Iconos  -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <!--Frameword tailwindcss modo CDN-->
+      <link href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.css" rel="stylesheet">
+      <!--Libreria PrismJs modo CDN-->
+      <link rel="stylesheet" href="css/prism.css">
+      
+
+      <!--Font Google-->
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Roboto', sans-serif; }
+      </style>
+      <!--<link rel="stylesheet" href="css/app.css">-->
+   </head>
+   <body class="bg-gray-100 tracking-wider tracking-normal">
+      <!--header inicio-->
+      <nav id="header" class="fixed w-full z-10 top-0 bg-white border-b border-gray-400">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+              <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fab" data-icon="css3-alt" class="svg-inline--fa fa-css3-alt fa-w-12 text-blue-500 mr-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"></path></svg>
+              <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#"> 
+               CSS 3
+               </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+               <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-blue-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <title>Menu</title>
+                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+               <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+                  <div class="relative pull-right pl-4 pr-4 md:pr-0">
+                     <input type="search" placeholder="Buscar" class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-blue-500 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                     <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+                        <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+               <ul class="list-reset lg:flex justify-end items-center">
+                  
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://github.com/eliseovega/PseInt" data-tippy-content="@github_eliseovega">
+                        <svg
+                           class="h-6 fill-current text-gray-600 hover:text-blue-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>GitHub</title>
+                           <path
+                              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.youtube.com/channel/UCFYXmYlRbH8FRfhm9LIliNQ" data-tippy-content="@desarrollapp"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-blue-700" role="img" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 24 24">
+                           <title>YouTube</title>
+                           <path
+                              d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                        </svg></a>
+
+                     
+                  </li>
+                  <li class="mr-3 py-2 lg:py-0">
+                     <a class="link" href="https://www.facebook.com/groups/485696102126068" data-tippy-content="@facebook_ADSI"><svg
+                           class="h-6 fill-current text-gray-600 hover:text-blue-700" role="img" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <title>Facebook</title>
+                           <path
+                              d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
+                        </svg></a>
+                  
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!--header fin-->
+
+      <!--inicio del super menu-->
+      <div class="bg-gray-900 pt-6">
+         <div class="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+           <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+             <div>
+               <p class="text-base leading-6 font-semibold text-blue-500 uppercase tracking-wider">
+                 ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN
+               </p>
+               <h2 class="mt-2 text-4xl leading-10 font-semibold font-display text-white">POSICIONAMIENTO</h2>
+               <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">Bienvenidos estimados aprendices a la competencia:</p>
+               <div class="mt-6 flex">
+                  <a href="#"  class="inline-flex items-start text-lg leading-6 font-medium text-blue-500 hover:text-blue-300 transition ease-in-out duration-150">
+                    <svg class="flex-shrink-0 mt-0.5 mr-4 h-6 w-6 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                      <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                      <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                    </svg> 
+                    <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">CONSTRUIR EL SISTEMA QUE CUMPLA CON LOS REQUISITOS DE LA SOLUCIÓN INFORMÁTICA</span>
+                    <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">CONSTRUIR EL SISTEMA QUE CUMPLA CON LOS REQUISITOS DE LA SOLUCIÓN INFORMÁTICA</span>
+                  </a>
+                </div>
+                <p class="mt-4 text-base leading-6 text-gray-400 max-w-3xl">Resultado de Aprendizaje:</p>
+                <div class="mt-6 flex">
+                  <a href="#"  class="inline-flex items-start text-lg leading-6 font-medium text-blue-500 hover:text-blue-300 transition ease-in-out duration-150">
+                    <svg class="flex-shrink-0 mt-0.5 mr-4 h-6 w-6 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                      <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                      <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                    </svg> 
+                    <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">Construir la interfaz de usuario, apoyado en la evaluación del prototipo, determinando las entradas y salidas requeridas en el diseño y definiéndolos lineamientos para la navegación, de acuerdo con las necesidades del usuario</span>
+                    <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Construir la interfaz de usuario, apoyado en la evaluación del prototipo, determinando las entradas y salidas requeridas en el diseño y definiéndolos lineamientos para la navegación, de acuerdo con las necesidades del usuario</span>
+                  </a>
+                </div>
+               <div class="mt-6 flex">
+                 <a href="#"  class="inline-flex items-start text-lg leading-6 font-medium text-blue-500 hover:text-blue-300 transition ease-in-out duration-150">
+                   <svg class="flex-shrink-0 mt-0.5 mr-4 h-6 w-6 transition ease-in-out duration-150" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                     <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                     <circle vector-effect="non-scaling-stroke" cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                   </svg> 
+                   <span class="mt-1.5 transition ease-in-out duration-150 sm:hidden">Tematica</span>
+                   <span class="hidden transition ease-in-out duration-150 sm:inline mt-1.5">Requisitos: Un Navegador y un editor de código</span>
+                 </a>
+               </div>
+             </div>
+             <div class="mt-8 lg:mt-0">
+               <div class="max-w-lg lg:ml-auto lg:max-w-xl">
+                <a href="css_generalidades.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"></path></svg>
+                   Generalidades
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                  
+
+                <a href="css_selectores.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="square" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"></path></svg>
+                  Selectores
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                
+                <a href="css_modelbox.html" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrows-alt" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"></path></svg>
+                  Modelo de Caja
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="css_posicionamiento.html" class="mt-3 flex items-start rounded-lg border border-blue-500 px-5 py-4 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150"   >
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="mr-3 h-6 w-6 text-blue-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>
+                  Posicionamiento
+                   <div class="ml-auto mt-0.5 pl-4">
+                     <svg class="h-5 w-5 text-blue-500"  viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                     </svg>
+                   </div>
+                 </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="wpforms" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 75.2v361.7c0 24.3-19 43.2-43.2 43.2H43.2C19.3 480 0 461.4 0 436.8V75.2C0 51.1 18.8 32 43.2 32h361.7c24 0 43.1 18.8 43.1 43.2zm-37.3 361.6V75.2c0-3-2.6-5.8-5.8-5.8h-9.3L285.3 144 224 94.1 162.8 144 52.5 69.3h-9.3c-3.2 0-5.8 2.8-5.8 5.8v361.7c0 3 2.6 5.8 5.8 5.8h361.7c3.2.1 5.8-2.7 5.8-5.8zM150.2 186v37H76.7v-37h73.5zm0 74.4v37.3H76.7v-37.3h73.5zm11.1-147.3l54-43.7H96.8l64.5 43.7zm210 72.9v37h-196v-37h196zm0 74.4v37.3h-196v-37.3h196zm-84.6-147.3l64.5-43.7H232.8l53.9 43.7zM371.3 335v37.3h-99.4V335h99.4z"></path></svg>
+                  Enlaces
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="image" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 336H54a6 6 0 0 1-6-6V118a6 6 0 0 1 6-6h404a6 6 0 0 1 6 6v276a6 6 0 0 1-6 6zM128 152c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zM96 352h320v-80l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L192 304l-39.515-39.515c-4.686-4.686-12.284-4.686-16.971 0L96 304v48z"></path></svg>
+                  Imagenes
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="tasks" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M139.61 35.5a12 12 0 0 0-17 0L58.93 98.81l-22.7-22.12a12 12 0 0 0-17 0L3.53 92.41a12 12 0 0 0 0 17l47.59 47.4a12.78 12.78 0 0 0 17.61 0l15.59-15.62L156.52 69a12.09 12.09 0 0 0 .09-17zm0 159.19a12 12 0 0 0-17 0l-63.68 63.72-22.7-22.1a12 12 0 0 0-17 0L3.53 252a12 12 0 0 0 0 17L51 316.5a12.77 12.77 0 0 0 17.6 0l15.7-15.69 72.2-72.22a12 12 0 0 0 .09-16.9zM64 368c-26.49 0-48.59 21.5-48.59 48S37.53 464 64 464a48 48 0 0 0 0-96zm432 16H208a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h288a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H208a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h288a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H208a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h288a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>
+                  Listas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg>
+                  Tablas
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="money-check"  class="mt-0.5 mr-4 h-5 w-5 text-gray-500" class="svg-inline--fa fa-money-check fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" textviewbox="0 0 20 20" fill="currentColor">
+                    <path fill="currentColor" d="M0 448c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V128H0v320zm448-208c0-8.84 7.16-16 16-16h96c8.84 0 16 7.16 16 16v32c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-32zm0 120c0-4.42 3.58-8 8-8h112c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H456c-4.42 0-8-3.58-8-8v-16zM64 264c0-4.42 3.58-8 8-8h304c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zm0 96c0-4.42 3.58-8 8-8h176c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zM624 32H16C7.16 32 0 39.16 0 48v48h640V48c0-8.84-7.16-16-16-16z"></path>
+                  </svg>
+                  Formularios
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
+                  <svg class="mt-0.5 mr-4 h-5 w-5 text-gray-500" textviewbox="0 0 20 20" fill="currentColor">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                  </svg>
+                  Flexbox
+                  <div class="ml-auto mt-0.5 pl-4">
+                    <svg class="h-5 w-5 text-gra.y-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+      <!--fin del super menu-->
+      <!--main container inicio-->
+      <div class="container w-full flex flex-wrap mx-auto px-2 pt-4 lg:pt-16 mt-16">
+         <!--menu inicio-->
+         <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+            <p class="text-base font-bold py-2 lg:pb-6 text-gray-700"></p>
+            <div class="block lg:hidden sticky inset-0">
+               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-blue-500 appearance-none focus:outline-none">
+                  <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:5em;" id="menu-content">
+               <ul class="list-reset">
+
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent">
+                     <a href='#section1'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:border-blue-500 lg:hover:border-blue-500">
+                        <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">1. Posicionamiento</span>
+                     </a>
+                  </li>
+                  
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent   ">
+              
+                     <a href='#section2' class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">2. Propiedades de Caja</span>
+                     </a>
+                  </li>
+                  
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent ">
+                     <a href='#section3' class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">3. Calcular Ancho y Alto </span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent ">
+                     <a href='#ejemplo' class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">Ejemplo practico</span>
+                     </a>
+                  </li>
+                  
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent ">
+                     <a href='#actividades' class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                     <span class="pb-1 md:pb-0 text-sm">Actividades</span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 hover:bg-blue-100 lg:hover:bg-transparent ">
+                     <a href='#section6'
+                        class="block pl-4 align-middle text-gray-700 no-underline hover:text-blue-500 border-l-4 border-transparent lg:hover:border-gray-400">
+                        <span class="pb-1 md:pb-0 text-sm">Nota Importante</span>
+                     </a>
+                  </li>
+                  
+               </ul>
+            </div>
+         </div>
+         <!--menu fin-->
+         <!--secciones inicio-->
+         <div class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
+            <!--Titulo-->
+            <div class="font-sans">
+               <button class="bg-gray-200 hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                  <svg class="h-5 pr-3 fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                     <path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z" /></svg>
+                  <a href="./index.html" class="text-base md:text-sm text-gray-700 font-bold no-underline hover:no-underline"><span>
+                        Inicio</span></a>
+               </button>
+               <h1 id='section1' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">1. Que es el Posicionamiento de Cajas</h1>
+               <p class="py-3">
+                En esencia, es mover un conjunto de cuadros rectangulares que se pueden colocar en los ejes x, y y z.
+                Hay diferentes formas / métodos para posicionar elementos con CSS puro. Usando position, float, flexbox y grid son los métodos más comunes desde el más básico al mas avanzado.
+                </p>
+               
+               <div class="relative overflow-hidden mb-6">
+                <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+                   <div class="">
+                      <img class="object-contain" src="imgcss/position.svg" alt="app form ">
+                    </div>
+                </div>
+              </div>
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">position: static</h2>
+              <p class="py-3">
+                Úse .static para colocar un elemento de acuerdo con el flujo normal del documento.
+              </p>
+              <div class="relative overflow-hidden mb-8">
+                <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+                   <div class="">
+                      <img class="object-contain" src="imgcss/position_static.svg" alt="app form ">
+                    </div>
+                </div>
+              </div>
+
+              <p class="py-3">
+                comportamiento normal o por defecto.
+              </p>
+
+              <h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de las propiedad position: static;</h3>
+
+              <p class="py-2">index.html</p>
+               <!--code-->
+              <div class="relative overflow-hidden mb-4">
+                <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 bg-white">
+                  <div class="mx-auto">
+                    <div class="static ml-12 bg-blue-500 w-64 h-32 text-white ">Static
+                      <!--<div class="relative bottom-0 ml-6 bg-gray-800 w-64 h-16">
+                        
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!--definimos los elementos en HTML--&gt;
+&lt;div class="caja_static"&gt;Static&lt;/div&gt; </code></pre>
+                </div>
+              </div>
+            <!--/code-->
+
+              <p class="py-2">style.css</p>
+               <div class="relative overflow-hidden mb-8 ">
+         
+                 <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Se aplica ancho al parrafo 1 y ancho y alto parrafo 2*/
+.caja_static { 
+  background-color: #ed8936;
+  color: #fff;
+  width: 256px; /*ancho del elemento*/
+  height: 128px; /*alto del elemento*/
+
+  position:static; /*posicion static o por defecto del elemento*/
+  left: 48px; /*se deplaza de izquierda a derecha 48px*/
+  
+}</code></pre></div>
+
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">position: relative</h2>
+              <p class="py-3">
+                Nos permite mover el elemento a una ubicación relativa a su posición original utilizando las propiedades: left, top, right, bottom. En lo posible se recomienda mejor utilizar margin. position: relative se utiliza más para posicionar elementos de forma absoluta dentro del elemento.
+              </p>
+              <div class="relative overflow-hidden mb-8">
+                <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+                   <div class="">
+                      <img class="object-contain" src="imgcss/position_relative.svg" alt="app form ">
+                    </div>
+                </div>
+              </div>
+
+              <p class="py-3">
+                Permite que un elemento se desplace respecto a lo que hubiera sido su posición normal; el resto de elementos continúan en su posición ignorando al que se desplaza, lo que puede crear superposiciones; el espacio libre que deja el elemento queda libre.
+              </p>
+
+              <h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de las propiedad position: relative;</h3>
+
+              <p class="py-2">index.html</p>
+               <!--code-->
+              <div class="relative overflow-hidden mb-4">
+                <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 bg-white">
+                  <div class="mx-auto">
+                    <div class="relative ml-12 mt-12 bg-blue-500 w-64 h-32 text-white ">Relative
+                      <!--<div class="relative bottom-0 ml-6 bg-gray-800 w-64 h-16">
+                        
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!--definimos los elementos en HTML--&gt;
+&lt;div class="caja_relative"&gt;Relative&lt;/div&gt; </code></pre>
+                </div>
+              </div>
+            <!--/code-->
+
+              <p class="py-2">style.css</p>
+               <div class="relative overflow-hidden mb-8 ">
+         
+                 <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Se aplica ancho al parrafo 1 y ancho y alto parrafo 2*/
+.caja_relative { 
+  background-color: #ed8936;
+  color: #fff;
+  width: 256px; /*ancho del elemento*/
+  height: 128px; /*alto del elemento*/
+
+  position:relative; /*posicion relativa del elemento*/
+  left: 48px; /*se deplaza de izquierda a derecha 48px*/
+  top: 48px;  /*se deplaza de arriba a abajo 48px*/
+}</code></pre></div>
+
+<h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">position: absolute</h2>
+<p class="py-3">
+  Úse absolute para colocar un elemento fuera del flujo normal del documento, haciendo que los elementos vecinos actúen como si el elemento no existiera.
+ </p>
+<div class="relative overflow-hidden mb-8">
+  <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+     <div class="">
+        <img class="object-contain" src="imgcss/position_absolute.svg" alt="app form ">
+      </div>
+  </div>
+</div>
+
+<p class="py-3">
+  Permite que un elemento se desplace respecto al origen de coordenadas del primer elemento contenedor posicionado ó respecto a la esquina superior izquierda de la ventana de visualización; el resto de elementos actúan como si el desplazado no existiera, por lo que su espacio será ocupado por otros elementos; puede crear superposiciones.
+</p>
+
+<h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de las propiedad position: absolute;</h3>
+
+<p class="py-2">index.html</p>
+ <!--code-->
+<div class="relative overflow-hidden mb-4">
+  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 bg-white">
+    <div class="mx-auto p-3">
+      <div class="relative p-3 bg-blue-500 w-auto h-32 text-white text-left ">
+        
+          <div class="absolute ml-20  bg-red-500 p-3 inline-block">
+            Absolute 1
+          </div>
+          <div class="absolute ml-4 mt-3 bg-yellow-500 p-3 inline-block">
+            Absolute 2
+          </div>
+      </div>
+    </div>
+  </div>
+  <div v-pre class="rounded-b-lg bg-gray-800">
+    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!--definimos los elementos en HTML--&gt;
+&lt;div class="padre_relative"&gt;
+    &lt;div class="hijo_absolute1"&gt;
+    Absolute 1
+    &lt;/div&gt;
+    &lt;div class="hijo_absolute2"&gt;
+    Absolute 2
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!--/code-->
+
+<p class="py-2">style.css</p>
+ <div class="relative overflow-hidden mb-8 ">
+
+   <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Se aplica ancho al parrafo 1 y ancho y alto parrafo 2*/
+.padre_relative { 
+background-color: #ed8936;
+color: #fff;
+width: autopx; /*ancho del elemento*/
+height: 128px; /*alto del elemento*/
+position:relative; /*posicion relativa del elemento*/
+left: 48px; /*se deplaza de izquierda a derecha 48px*/
+top: 48px;  /*se deplaza de arriba a abajo 48px*/
+}
+.hijo_absolute1 { 
+  background-color: #f56565;
+  color: #fff;
+  padding: 12px;
+  position:absolute; /*posicion absolute del elemento*/
+  left: 80px; /*se deplaza de izquierda a derecha 80px*/
+  }
+.hijo_absolute2 { 
+  background-color: #ecc94b;
+  color: #fff;
+  padding: 12px;
+  position:absolute; /*posicion absolute del elemento se sobrepone*/
+  left: 16px; /*se deplaza de izquierda a derecha 48px*/
+}</code></pre></div>
+<h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">position: fixed</h2>
+<p class="py-3">
+  Úse fixed para colocar un elemento en relación con la ventana del navegador.
+  </p>
+<div class="relative overflow-hidden mb-8">
+  <div v-pre class="bg-white rounded-lg overflow-hidden border border-gray-400 p-4 " >
+     <div class="">
+        <img class="object-contain" src="imgcss/position_fixed.svg" alt="app form ">
+      </div>
+  </div>
+</div>
+
+<p class="py-3">
+  permite fijar un elemento en una posición respecto al origen de coordenadas del primer elemento contenedor posicionado ó respecto a la esquina superior de la ventana de visualización; el elemento se mantendrá en la ventana de visualización o viewport, siempre en una misma posición aunque el usuario se desplace por la web haciendo scroll
+  </p>
+
+<h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de la propiedad position: fixed;</h3>
+
+<p class="py-2">index.html</p>
+ <!--code-->
+<div class="relative overflow-hidden mb-4">
+  <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 bg-white">
+    <div class="mx-auto p-3">
+      <div class="relative overflow-y-scroll p-3 bg-blue-500 w-auto h-32 text-white text-left ">
+        
+          <div class="sticky top-0 mt-20  bg-red-500 p-3">
+            Fixed
+          </div>
+          <div class="absolute ml-4 mt-3 bg-yellow-500 p-3 inline-block">
+            Absolute
+          </div>
+      </div>
+    </div>
+  </div>
+  <div v-pre class="rounded-b-lg bg-gray-800">
+    <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!--definimos los elementos en HTML--&gt;
+&lt;div class="padre_relative"&gt;
+    &lt;div class="hijo_fixed"&gt;
+    Absolute 1
+    &lt;/div&gt;
+    &lt;div class="hijo_absolute"&gt;
+    Absolute 2
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<!--/code-->
+
+<p class="py-2">style.css</p>
+ <div class="relative overflow-hidden mb-8 ">
+
+   <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Se aplica ancho al parrafo 1 y ancho y alto parrafo 2*/
+.padre_relative { 
+background-color: #ed8936;
+color: #fff;
+width: autopx; /*ancho del elemento*/
+height: 128px; /*alto del elemento*/
+position:relative; /*posicion relativa del elemento*/
+left: 48px; /*se deplaza de izquierda a derecha 48px*/
+top: 48px;  /*se deplaza de arriba a abajo 48px*/
+}
+.hijo_fixed { 
+  background-color: #f56565;
+  color: #fff;
+  padding: 12px;
+  position:fixed; /*posicion fija del elemento*/
+  left: 80px; /*se deplaza de izquierda a derecha 80px*/
+  }
+.hijo_absolute { 
+  background-color: #ecc94b;
+  color: #fff;
+  padding: 12px;
+  position:absolute; /*posicion absolute del elemento se sobrepone*/
+  left: 16px; /*se deplaza de izquierda a derecha 48px*/
+}</code></pre></div>
+
+              
+             
+            <div class="font-sans">
+               <h2 id='ejemplo' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Ejemplo Practico: Posicionamiento en CSS </h2>
+               
+               <p class="py-3" >Observando el video desarrolla el ejercicio creando una página web con las siguientes Características:</p>
+            </div>
+            
+            <nav class="flex flex-col sm:items-start sm:text-left text-left items-center py-3">
+              <a class="mb-2">
+                <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>1 menu de 4 opciones para los tipos de Posicionamiento
+              </a>
+              <a class="mb-2">
+                <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>4 cajas donde se aplique el position stactic
+              </a>
+              <a class="mb-2">
+                <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>4 cajas donde se aplique el position relative
+              </a>
+              <a class="mb-2">
+                <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>4 cajas donde se aplique el position absolute
+              </a>
+                          
+            </nav>
+            
+            <!--Caja de codigo-->
+            <p class="py-2">index.html</p>
+            <div class="relative overflow-hidden mb-8">
+              <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-6" >
+                
+                <ul class="flex">
+                  <li class="mr-6">
+                    <a class="text-blue-500 " href="#">Static</a>
+                  </li>
+                  <li class="mr-6">
+                    <a class="text-blue-500 " href="#">Relative</a>
+                  </li>
+                  <li class="mr-6">
+                    <a class="text-blue-500 " href="#">Absolute</a>
+                  </li>
+                  <li class="mr-6">
+                    <a class="text-blue-500 " href="#">Fixed</a>
+                  </li>
+                </ul>
+                
+                <div class=" py-6">
+                  <div class="bg-blue-600 w-16 h-16 text-white m-2">
+                    <h1 class="text-3xl text-center">1</h1>
+                  </div>
+                  <div class="bg-blue-500 static ml-32 w-16 h-16 text-white m-2">
+                    <h1 class="text-3xl text-center">2</h1>
+                  </div>
+                  <div class="bg-blue-400 w-16 h-16 text-white m-2">
+                    <h1 class="text-3xl text-center">3</h1>
+                  </div>
+                  <div class="bg-blue-300 w-16 h-16 text-white m-2">
+                    <h1 class="text-3xl text-center">4</h1>
+                  </div>
+                </div>
+                
+            </div>
+            <div v-pre class="rounded-b-lg bg-gray-800">
+                  <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Tipos de Posicionamientos CSS&lt;/title&gt;
+   &lt;!--Enlace para llamar al archivos css --&gt;
+   &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;a class="enlace-blue " href="static.html"&gt;Static&lt;/a&gt;
+&lt;a class="enlace-blue " href="relative.html"&gt;Relative&lt;/a&gt;
+&lt;a class="enlace-blue " href="absolute.html"&gt;Absolute&lt;/a&gt;
+&lt;a class="enlace-blue " href="fixed.html"&gt;Fixed&lt;/a&gt;
+
+&lt;div class="espacio"&gt;
+&lt;div class="caja bg-blue-600 w-16 h-16 text-white m-2"&gt;
+  &lt;h1 &gt;1&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="caja tipo "&gt;
+  &lt;h1 &gt;2&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="caja "&gt;
+  &lt;h1 &gt;3&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="caja "&gt;
+  &lt;h1 &gt;4&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+                </div>
+            </div>
+
+            <p class="py-2">style.css</p>
+               <div class="relative overflow-hidden mb-8 ">
+         
+                 <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Importación del tipo de letra Roboto de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*todos los elementos dentro del body heredan el tipo y tamaño de letra*/
+body{
+  font-family: 'Roboto', sans-serif; /*Tipo del letra Roboto*/
+  font-size: 14px;
+}
+.enlace-blue{
+  text-decoration:none;
+  color: #4299e1;
+  margin: 8px;
+}
+.espacio{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.caja{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #ebf8ff; /*color de fondo*/
+  color: #fff;
+  margin: 8px;
+}
+.caja .tipo{
+  position: static;
+  left: 128px;
+}
+h1{
+  font-size: 30px;
+  text-align:center;
+}
+
+</code></pre></div>
+
+            <!--/Caja de codigo-->
+            <div id='actividades' class="font-sans">
+               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Actividad #.6 CSS3: Tipo de Posicionamiento CSS </h2>
+            
+            </div>
+            <p class="py-2">
+               Ahora que ya sabes el uso de CSS en HTML es el momento de que empieces a practicar, aunque no es nada difícil, practica para desarrollar la habilidad en el aprendizaje.
+            </p>
+            <div class="container">
+               <div class="bg-blue-500 text-center py-4 lg:px-4">
+                  <div class="p-2 bg-gray-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                    <a href="Actividad_6_Posicionamiento CSS.pdf" target="_blank" ><span class="flex rounded-full bg-blue-600 uppercase px-2 py-1 text-xs font-bold mr-3">Descargar</span></a>
+                    <span class="font-semibold mr-2 text-left flex-auto">Instrucciones: Actividad 6 Tipo de Posicionamiento CSS</span>
+                  </div>
+                </div>
+            </div>
+         
+            <!--/ Post Content-->
+            <!--Boton de ir hacia arriba-->
+            <div id="button-up" class="transition duration-500 ease-in-out fixed bg-gray-900 rounded-full h-12 w-12 flex items-center justify-center right-0 bottom-0 cursor-pointer hover:bg-blue-500 transform hover:-translate-y-1 hover:-translate-x-1 hover:scale-100" >
+               <i class="fas fa-chevron-up text-white font-bold"></i>
+            </div>
+
+
+            <!-- util -->
+            
+            <div class=" py-6 flex items-center">
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-blue-100 hover:text-green-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z"/>
+               </svg>
+               <svg class="h-16 fill-current text-gray-600 hover:shadow hover:bg-blue-100 hover:text-red-500 p-4 mr-2 border rounded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z"/>
+               </svg>
+               <div class="pl-4">
+                  <p class="text-gray-800 font-bold">Te ha resultado util esta guia de aprendizaje ?</p>
+                  <p class="text-xs text-gray-600 pt-2">Que tal el contenido?</p>
+               </div>
+            </div>
+            <!-- fin util -->
+         </div>
+         <!--secciones fin-->
+
+         <!--enlace arriba -->
+         
+      </div>
+     
+      <!--main container fin-->
+
+      <!--footer inicio-->
+      <footer id='section6' class="mt-10 bg-white border-t border-gray-400 shadow">
+         <div class="container mx-auto flex py-8">
+            <div class="w-full mx-auto flex flex-wrap">
+               <div class="flex w-full lg:w-1/2 ">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Nota Importante</h3>
+                     <p class="py-4 text-gray-600 text-sm">
+                        Has llegado al final de esta guia virtual de aprendizaje. Espero que hayas disfrutado del recorrido por los conceptos básicos de CSS. En este
+                        punto ya deberías entender el lenguaje, cómo funciona en un nivel básico y deberías poder escribir algunos elementos y
+                        propiedades. En las siguiente guias virtuales ampliaremos con más detalle algunas de las cosas que ya hemos visto e
+                        introduciremos algunas características nuevas del lenguaje.
+                     </p>
+                     
+                  </div>
+               </div>
+               <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                  <div class="px-8">
+                     <h3 class="font-bold text-gray-900">Creditos</h3>
+                     <ul class="list-reset items-center text-sm pt-3">
+                        <li>
+                           <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1" href="#">© 2020 by @eliseovega</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!--footer fin -->
+      <script>
+         /*Toggle dropdown list*/
+         /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+         
+         var navMenuDiv = document.getElementById("nav-content");
+         var navMenu = document.getElementById("nav-toggle");
+         
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e){
+           var target = (e && e.target) || (event && event.srcElement);
+         
+          
+           //Nav Menu
+           if (!checkParent(target, navMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, navMenu)) {
+         	  // click on the link
+         	  if (navMenuDiv.classList.contains("hidden")) {
+         		navMenuDiv.classList.remove("hidden");
+         	  } else {navMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  navMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+           //Help Menu
+           if (!checkParent(target, helpMenuDiv)) {
+         	// click NOT on the menu
+         	if (checkParent(target, helpMenu)) {
+         	  // click on the link
+         	  if (helpMenuDiv.classList.contains("hidden")) {
+         		helpMenuDiv.classList.remove("hidden");
+         	  } else {helpMenuDiv.classList.add("hidden");}
+         	} else {
+         	  // click both outside link and outside menu, hide menu
+         	  helpMenuDiv.classList.add("hidden");
+         	}
+           }
+           
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+         	if( t == elm ) {return true;}
+         	t = t.parentNode;
+           }
+           return false;
+         }
+         
+         
+      </script>
+      <!----------------------------------------------------------->
+      <!--Prism Js-->
+      <script src="js/prism.js"></script>
+      <script src="js/bottom_up.js"></script>
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+      <!-- Scroll Spy -->
+      <script>
+         /* http://jsfiddle.net/LwLBx/ */
+
+         // Cache selectors
+         var lastId,
+            topMenu = $("#menu-content"),
+            topMenuHeight = topMenu.outerHeight() + 25,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+               var item = $($(this).attr("href"));
+               if (item.length) { return item; }
+            });
+
+         // Bind click handler to menu items
+         // so we can get a fancy scroll animation
+         menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+               offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+            $('html, body').stop().animate({
+               scrollTop: offsetTop
+            }, 300);
+            if (!helpMenuDiv.classList.contains("hidden")) {
+               helpMenuDiv.classList.add("hidden");
+            }
+            e.preventDefault();
+         });
+
+         // Bind to scroll
+         $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+               if ($(this).offset().top < fromTop)
+                  return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+               lastId = id;
+               // Set/remove active class
+               menuItems
+                  .parent().removeClass("font-bold border-blue-500")
+                  .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-blue-500");
+            }
+         });
+
+      </script>
+
+   </body>
+</html>
