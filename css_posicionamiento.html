@@ -325,6 +325,8 @@
                     </div>
                 </div>
               </div>
+              <h1 id='section2' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">2. Tipos de Posicionamiento CSS</h1>
+               
               <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-2xl">position: static</h2>
               <p class="py-3">
                 Úse .static para colocar un elemento de acuerdo con el flujo normal del documento.
@@ -580,6 +582,346 @@ top: 48px;  /*se deplaza de arriba a abajo 48px*/
   left: 16px; /*se deplaza de izquierda a derecha 48px*/
 }</code></pre></div>
 
+<div class="font-sans">
+  <h2 id='section3' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">3. Posicionamiento Z-Index en CSS </h2>
+  
+  <p class="py-3" >La propiedad z-index sirve para regular el orden de visualización de capas superpuestas. Es un valor numérico que tendrá más prioridad cuanto mayor sea. Sólo funciona con elementos que tengan algún tipo de posicionamiento (relativo, absoluto o fijo).</p>
+</div>
+
+<div class="mb-6 border-t border-b border-gray-300 overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Concepto</th> 
+          <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Descripción</th>
+        </tr>
+      </thead> 
+      <tbody class="align-baseline">
+        <tr>
+           <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">z-index:</td>
+           <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">valor_numerico;</td>
+        </tr> 
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de la propiedad z-index: ;</h3>
+<!--Caja de codigo-->
+<p class="py-2">index.html</p>
+<div class="relative overflow-hidden mb-8">
+ <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-6" >
+   
+  <div class="z-40 ml-0 mt-0 w-32 h-32 bg-yellow-500">z-40</div>
+  <div class="z-30 ml-2 -mt-20 w-32 h-32 bg-blue-500">z-30</div>
+  <div class="z-20 ml-4 -mt-24 w-32 h-32 bg-red-500">z-20</div>
+  
+  
+   
+</div>
+<div v-pre class="rounded-b-lg bg-gray-800">
+     <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Posicionamiento Z-Index en CSS&lt;/title&gt;
+&lt;!--Enlace para llamar al archivos css --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="container"&gt;
+  &lt;div class="caja1"&gt;
+    &lt;h1 &gt;1&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja2"&gt;
+    &lt;h1 &gt;2&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja3 "&gt;
+    &lt;h1 &gt;3&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+   </div>
+</div>
+
+<p class="py-2">style.css</p>
+  <div class="relative overflow-hidden mb-8 ">
+
+    <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Importación del tipo de letra Roboto de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*todos los elementos dentro del body heredan el tipo y tamaño de letra*/
+body{
+  font-family: 'Roboto', sans-serif; /*Tipo del letra Roboto*/
+  font-size: 14px;
+}
+.container{
+  width: 1000px;
+  height: 1000px;
+  background: #ccc;
+  border: 2px solid;
+  margin: auto;
+}
+h1{
+  font-size: 30px;
+  text-align:center;
+}
+.caja1{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #ecc94b; /*color de fondo*/
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  left: 200px;
+  top:200px;
+}
+.caja2{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #4299e1; /*color de fondo*/
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  left: 250px;
+  top:100px;
+}
+.caja3{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #f56565; /*color de fondo*/
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  left: 300px;
+  top:50px;
+}
+
+</code></pre></div>
+
+
+<div class="font-sans">
+  <h2 id='section4' class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">4. Posicionamiento Flotante en CSS </h2>
+  
+  <p class="py-3" >El posicionamiento flotante es una propiedad que nos permite hacer saltar las cajas del flujo normal del documento y posicionar elementos a la izquierda y/o a la derecha de su elemento contenedor. En caso de no existir elemento contendor se considera el body.</p>
+</div>
+
+<div class="mb-6 border-t border-b border-gray-300 overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Concepto</th> 
+          <th class="text-sm font-semibold text-gray-700 p-2 bg-gray-100">Descripción</th>
+          
+        </tr>
+      </thead> 
+      <tbody class="align-baseline">
+        <tr>
+          <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">float:</td>
+           <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">left | right | both;</td>
+           
+        </tr> 
+        <tr>
+           <td class="p-2 border-t border-gray-300 font-mono text-xs text-purple-700 whitespace-no-wrap">Clear:</td>
+            <td class="p-2 border-t border-gray-300 font-mono text-xs text-blue-700 whitespace-pre">left | right | both;</td>
+            
+         </tr>  
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de la propiedad float: left; y clear: left;</h3>
+<!--Caja de codigo-->
+<p class="py-2">index.html</p>
+<div class="relative overflow-hidden mb-8">
+ <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-6" >
+   
+   <div class=" py-6">
+     <div class="bg-blue-600 float-left w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">1</h1>
+     </div>
+     <div class="bg-blue-500 float-left w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">2</h1>
+     </div>
+     <div class="bg-blue-400 clear-left w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">3</h1>
+     </div>
+     <div class="bg-blue-300 w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">4</h1>
+     </div>
+   </div>
+   
+</div>
+<div v-pre class="rounded-b-lg bg-gray-800">
+     <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Posicionamiento Flotante izquierda en CSS&lt;/title&gt;
+&lt;!--Enlace para llamar al archivos css --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="espacio"&gt;
+  &lt;div class="caja flotante"&gt;
+    &lt;h1 &gt;1&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja flotante"&gt;
+    &lt;h1 &gt;2&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja limpia "&gt;
+    &lt;h1 &gt;3&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja "&gt;
+    &lt;h1 &gt;4&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+   </div>
+</div>
+
+<p class="py-2">style.css</p>
+  <div class="relative overflow-hidden mb-8 ">
+
+    <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Importación del tipo de letra Roboto de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*todos los elementos dentro del body heredan el tipo y tamaño de letra*/
+body{
+  font-family: 'Roboto', sans-serif; /*Tipo del letra Roboto*/
+  font-size: 14px;
+}
+.enlace-blue{
+  text-decoration:none;
+  color: #4299e1;
+  margin: 8px;
+}
+.espacio{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+h1{
+  font-size: 30px;
+  text-align:center;
+}
+.caja{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #ebf8ff; /*color de fondo*/
+  color: #fff;
+  margin: 8px;
+}
+.caja .flotante{
+  float:left; /*el elemeno flotara la izquierda*/
+}
+.limpia{
+ clear:left; /*limpia el comportamiento de flotar a la izquierda*/
+}
+
+</code></pre></div>
+
+<h3  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-lg">Ejemplo de las propiedad float: right; y clear: both;</h3>
+<!--Caja de codigo-->
+<p class="py-2">index.html</p>
+<div class="relative overflow-hidden mb-8">
+ <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-6" >
+   
+   <div class=" py-6">
+     <div class="bg-blue-600 float-right w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">1</h1>
+     </div>
+     <div class="bg-blue-500 float-right w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">2</h1>
+     </div>
+     <div class="bg-blue-400 clear-right w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">3</h1>
+     </div>
+     <div class="bg-blue-300 w-16 h-16 text-white m-2">
+       <h1 class="text-3xl text-center">4</h1>
+     </div>
+   </div>
+   
+</div>
+<div v-pre class="rounded-b-lg bg-gray-800">
+     <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Posicionamiento Flotante Derecha en CSS&lt;/title&gt;
+&lt;!--Enlace para llamar al archivos css --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="espacio"&gt;
+  &lt;div class="caja flotante"&gt;
+    &lt;h1 &gt;1&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja flotante"&gt;
+    &lt;h1 &gt;2&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja limpia "&gt;
+    &lt;h1 &gt;3&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="caja "&gt;
+    &lt;h1 &gt;4&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+   </div>
+</div>
+
+<p class="py-2">style.css</p>
+  <div class="relative overflow-hidden mb-8 ">
+
+    <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Importación del tipo de letra Roboto de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*todos los elementos dentro del body heredan el tipo y tamaño de letra*/
+body{
+  font-family: 'Roboto', sans-serif; /*Tipo del letra Roboto*/
+  font-size: 14px;
+}
+.enlace-blue{
+  text-decoration:none;
+  color: #4299e1;
+  margin: 8px;
+}
+.espacio{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+h1{
+  font-size: 30px;
+  text-align:center;
+}
+.caja{
+  width:  64px;               /*ancho*/
+  height: 64px;              /*alto*/
+  background-color: #ebf8ff; /*color de fondo*/
+  color: #fff;
+  margin: 8px;
+}
+.caja .flotante{
+  float: right; /*el elemeno flotara a la derecha*/
+}
+.limpia{
+ clear:both; /*limpia el comportamiento de flotar a la derecha*/
+}
+
+</code></pre></div>
+
               
              
             <div class="font-sans">
@@ -731,6 +1073,207 @@ h1{
 
 </code></pre></div>
 
+<div class="font-sans">
+  <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Ejemplo Practico N°2: Posicionamiento Flotante CSS </h2>
+  
+  <p class="py-3" >Observando el video desarrolla el ejercicio creando una página web con las siguientes Características:</p>
+</div>
+
+<nav class="flex flex-col sm:items-start sm:text-left text-left items-center py-3">
+ <a class="mb-2">
+   <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+       <path d="M20 6L9 17l-5-5"></path>
+     </svg>
+   </span>1 menu de 4 opciones para la pagina web
+ </a>
+ <a class="mb-2">
+   <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+       <path d="M20 6L9 17l-5-5"></path>
+     </svg>
+   </span>1 contenedor que contenga todas las secciones
+ </a>
+ <a class="mb-2">
+   <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="w-3 h-3" viewBox="0 0 24 24">
+       <path d="M20 6L9 17l-5-5"></path>
+     </svg>
+   </span>2 imagenes, 1 parrafo, 1 sidebar, 1 articulo y un footer
+ </a>
+             
+</nav>
+
+<!--Caja de codigo-->
+<p class="py-2">index.html</p>
+<div class="relative overflow-hidden mb-8">
+ <div v-pre class="bg-white rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 p-6" >
+   
+   <ul class="flex">
+     <li class="mr-6">
+       <a class="text-blue-500 " href="#">Inicio</a>
+     </li>
+     <li class="mr-6">
+       <a class="text-blue-500 " href="#">Nosotros</a>
+     </li>
+     <li class="mr-6">
+       <a class="text-blue-500 " href="#">Servicios</a>
+     </li>
+     <li class="mr-6">
+       <a class="text-blue-500 " href="#">Contactenos</a>
+     </li>
+   </ul>
+   
+   <div class=" py-6">
+     <div class="bg-blue-600 float-left w-1/2 h-24 text-white">
+       <h1 class="text-xl text-center">Imagen 1</h1>
+     </div>
+     <div class="bg-blue-500 float-left w-1/2 h-24 text-white">
+       <h1 class="text-xl text-center">Imagen 2</h1>
+     </div>
+     <div class="bg-blue-400 clear-both w-full h-32 text-white">
+       <h1 class="text-xl text-center">Parrafo </h1>
+     </div>
+     <div class="bg-blue-600 float-left w-1/4 h-32 text-white">
+      <h1 class="text-xl text-center">Sidebar </h1>
+    </div>
+    <div class="bg-blue-500 float-left w-3/4 h-32 text-white">
+      <h1 class="text-xl text-center">Articulo </h1>
+    </div>
+    <div class="bg-blue-400 clear-both w-full h-16 text-white">
+      <h1 class="text-xl text-center">Footer</h1>
+    </div>
+     
+   </div>
+   
+</div>
+<div v-pre class="rounded-b-lg bg-gray-800">
+     <pre class="scrollbar-none m-0 p-0 language-html"><code class="inline-block p-4 scrolling-touch">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Tipos de Posicionamientos CSS&lt;/title&gt;
+&lt;!--Enlace para llamar al archivos css --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="menu"&gt;
+&lt;a class="enlace-blue " href="#" &gt;Inicio&lt;/a&gt;
+&lt;a class="enlace-blue " href="#" &gt;Nosotros&lt;/a&gt;
+&lt;a class="enlace-blue " href="#" &gt;Servicios&lt;/a&gt;
+&lt;a class="enlace-blue " href="#" &gt;Contactenos&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="container espacio"&gt;
+  &lt;div class="imagen1"&gt;
+    &lt;h1 &gt;Imagen 1&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="imagen2"&gt;
+    &lt;h1 &gt;Imagen 2&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="parrafo limpia "&gt;
+    &lt;h1 &gt;Parrafo&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="sidebar "&gt;
+    &lt;h1 &gt;Sidebar&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="articulo "&gt;
+    &lt;h1 &gt;Articulo&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="footer "&gt;
+    &lt;h1 &gt;Footer&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+   </div>
+</div>
+
+<p class="py-2">style.css</p>
+  <div class="relative overflow-hidden mb-8 ">
+
+    <div v-pre class="rounded-lg bg-gray-800"><pre class="scrollbar-none m-0 p-0 language-css"><code class="inline-block p-4 scrolling-touch">/*Importación del tipo de letra Roboto de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*todos los elementos dentro del body heredan el tipo y tamaño de letra*/
+body{
+font-family: 'Roboto', sans-serif; /*Tipo del letra Roboto*/
+font-size: 14px;
+}
+.menu{
+  width: 1000px;
+  margin: auto;
+}
+.enlace-blue{
+text-decoration:none;
+color: #4299e1;
+margin: 8px;
+}
+.espacio{
+padding-top: 24px;
+padding-bottom: 24px;
+}
+.container{
+  width: 1000px;
+  height: 700px;
+  margin: auto;
+}
+h1{
+  font-size: 30px;
+  text-align:center;
+}
+
+.imagen1{
+width:  50%;               /*ancho*/
+height: 150px;              /*alto*/
+background-color: #3182ce; /*color de fondo*/
+color: #fff;
+float:left;
+}
+.imagen2{
+  width:  50%;               /*ancho*/
+  height: 150px;              /*alto*/
+  background-color: #4299e1; /*color de fondo*/
+  color: #fff;
+  float:left;
+  }
+.parrafo{
+  width:  100%;               /*ancho*/
+  height: 200px;              /*alto*/
+  background-color: #63b3ed; /*color de fondo*/
+  color: #fff;
+  clear:both;
+  float:left;
+}
+
+.sidebar{
+  width:  30%;               /*ancho*/
+  height: 150px;              /*alto*/
+  background-color: #3182ce; /*color de fondo*/
+  color: #fff;
+  clear: both;
+  float:left;
+  }
+.articulo{
+  width:  70%;               /*ancho*/
+  height: 150px;              /*alto*/
+  background-color: #4299e1; /*color de fondo*/
+  color: #fff;
+  float:left;
+  }
+.footer{
+  width:  100%;               /*ancho*/
+  height:100px;              /*alto*/
+  background-color: #63b3ed; /*color de fondo*/
+  color: #fff;
+  clear:both;
+  float:left;
+}</code></pre></div>
+
+
             <!--/Caja de codigo-->
             <div id='actividades' class="font-sans">
                <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Actividad #.6 CSS3: Tipo de Posicionamiento CSS </h2>
@@ -747,6 +1290,21 @@ h1{
                   </div>
                 </div>
             </div>
+            <div id='actividades' class="font-sans">
+              <h2  class="font-sans font-extrabold break-normal text-gray-900 pt-6 pb-2 text-3xl">Actividad #.8 CSS3: Posicionamiento Flotante CSS </h2>
+           
+           </div>
+           <p class="py-2">
+              Ahora que ya sabes el uso de CSS en HTML es el momento de que empieces a practicar, aunque no es nada difícil, practica para desarrollar la habilidad en el aprendizaje.
+           </p>
+           <div class="container">
+              <div class="bg-blue-500 text-center py-4 lg:px-4">
+                 <div class="p-2 bg-gray-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                   <a href="Actividad_8_Posicionamiento_flotante_CSS.pdf" target="_blank" ><span class="flex rounded-full bg-blue-600 uppercase px-2 py-1 text-xs font-bold mr-3">Descargar</span></a>
+                   <span class="font-semibold mr-2 text-left flex-auto">Instrucciones: Actividad 8 Posicionamiento Flotante CSS</span>
+                 </div>
+               </div>
+           </div>
          
             <!--/ Post Content-->
             <!--Boton de ir hacia arriba-->
